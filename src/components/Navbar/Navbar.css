@@ -1,0 +1,17 @@
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  list-style: none;
+}
+
+.item li {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
