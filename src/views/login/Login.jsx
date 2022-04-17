@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Login() {
-    return (
+  const authContextValue = useContext(AuthContext);
+  return (
+    <div>
+      <div>Página Login</div>
       <div>
-        Página Login
+        {authContextValue.user ? (
+          <button onClick={authContextValue.logoutUser}>LOGOUT</button>
+        ) : (
+          <button onClick={authContextValue.loginUser}>LOGIN</button>
+        )}
       </div>
-    );
+    </div>
+  );
 }
