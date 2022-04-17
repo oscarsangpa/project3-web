@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import {ROUTE} from './routes';
 import Home from '../views/home/Home';
 import Search from '../views/search/Search';
@@ -12,6 +12,7 @@ import SerieDetail from '../views/detail/serieDetail/SerieDetail';
 
 export default function MainRouter() {
   return (
+    <BrowserRouter>
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
         <Route path={ROUTE.SEARCH} element={<Search />} />
@@ -22,5 +23,6 @@ export default function MainRouter() {
         <Route path={ROUTE.DETAIL.MOVIE} element={<MovieDetail />} />
         <Route path={ROUTE.DETAIL.SERIE} element={<SerieDetail />} />
       </Routes>
+    </BrowserRouter>
   );
 }
