@@ -1,3 +1,9 @@
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./guards/ProtectedRoute";
+import Home from "./views/Home/Home";
+import Login from "./views/Login/Login";
+import Profile from "./views/Profile/Profile";
+import Register from "./views/Register/Register";
 import MainRouter from "./router/MainRouter";
 import AuthContextProvider from "./contexts/AuthContext";
 import {
@@ -26,3 +32,7 @@ export function App() {
     </QueryClientProvider>
   );
 }
+
+export default App;
+
+

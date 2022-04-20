@@ -1,16 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import {createRoot} from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import { AuthContextProvider } from './contexts/AuthContext';
 import './style/reset.css'
-import './style/index.css';
 
-import { App } from './App';
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-
-ReactDOM.render(
-  
-  <App />,
-  
-  document.getElementById('root')
+root.render(
+  <BrowserRouter>
+  <AuthContextProvider>
+    <App />
+  </AuthContextProvider>
+  </BrowserRouter>
 );
-
-
