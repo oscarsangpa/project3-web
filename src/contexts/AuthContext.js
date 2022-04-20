@@ -30,7 +30,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 import { getCurrentUser } from '../services/UsersService'
 import { getAccessToken, setAccessToken } from '../store/AccessTokenStore';
 
-const AuthContext = createContext()
+export const AuthContext = createContext()
 
 export const useAuthContext = () => useContext(AuthContext)
 

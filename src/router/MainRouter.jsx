@@ -2,12 +2,11 @@ import * as React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ROUTE } from "./routes";
 import ProtectedRoute from "./ProtectedRoute";
-
-import Home from "../views/home/Home";
+import Home from "../views/Home/Home";
 import Search from "../views/search/Search";
-import Login from "../views/login/Login";
-import Register from "../views/register/Register";
-import Profile from "../views/profile/Profile";
+import Login from "../views/Login/Login";
+import Register from "../views/Register/Register";
+import Profile from "../views/Profile/Profile";
 import ActorDetail from "../views/detail/actorDetail/ActorDetail";
 import MovieDetail from "../views/detail/movieDetail/MovieDetail";
 import SerieDetail from "../views/detail/serieDetail/SerieDetail";
