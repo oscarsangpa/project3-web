@@ -17,7 +17,7 @@ export default function MainRouter() {
     <BrowserRouter>
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
-        <Route path={ROUTE.SEARCH} element={<Search />} />
+        {/* <Route path={ROUTE.SEARCH} element={<Search />} /> */}
         <Route path={ROUTE.LOGIN} element={<Login />} />
         <Route path={ROUTE.REGISTER} element={<Register />} />
         <Route
