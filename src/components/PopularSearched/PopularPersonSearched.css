@@ -1,0 +1,13 @@
+.containerMostSearched {
+  display: flex;
+}
+
+.itemMostSearched {
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+img {
+  width: 80px;
+}
+

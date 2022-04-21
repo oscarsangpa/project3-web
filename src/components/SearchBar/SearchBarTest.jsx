@@ -53,15 +53,15 @@ const SearchBarTest = () => {
             <button type="submit"> search </button>
           </form>
         </h4>
-        {/* {
-          searched.map((search => {
+        {
+          searched.map((({name, id}) => {
             return (
               <>
-                <p> persona: {search.name}</p>
+                <p key={id}>{name}</p>
               </>
             )
           }))
-        } */}
+        }
       </div>
     </>
   )
