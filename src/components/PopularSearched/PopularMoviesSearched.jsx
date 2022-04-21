@@ -13,7 +13,7 @@ const PopularMoviesSearched = () => {
   }, [])
   return ( 
     <>
-        <h2> - Movies most searched - </h2>
+        
         <div className="containerMostSearched">
       {movies.map(popMovie => {
         return (

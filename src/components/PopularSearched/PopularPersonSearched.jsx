@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { httpGet, BASE_IMG } from "../../services/TMBDService/TMDBService"
+import Slider from "../Slider/SliderPOP";
 import "./PopularPersonSearched.css"
 
 const PopularPersonSearched = () => {
@@ -15,7 +16,6 @@ const PopularPersonSearched = () => {
 
   return ( 
     <>
-      <h2> - People most searched - </h2>
         <div className="containerMostSearched">
     {popular.map((popPerson) => {
       return (

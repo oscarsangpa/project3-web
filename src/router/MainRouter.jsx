@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ROUTE } from "./routes";
 import ProtectedRoute from "./ProtectedRoute";
 
-import Home from "../views/home/Home";
+import Home from "../views/Home/Home";
 import Search from "../views/search/Search";
 import Login from "../views/login/Login";
 import Register from "../views/register/Register";

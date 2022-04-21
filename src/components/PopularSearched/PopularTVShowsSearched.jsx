@@ -15,7 +15,6 @@ const PopularTVShowsSearched = () => {
 
   return ( 
     <>
-      <h2>- TV Shows most searched - </h2>
       <div className="containerMostSearched">
       {
         tvShows.map(popShow => {

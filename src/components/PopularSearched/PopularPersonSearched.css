@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Poppins:wght@200&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(210, 207, 222);
+}
 .containerMostSearched {
   display: flex;
 }
@@ -9,5 +15,6 @@
 
 img {
   width: 80px;
+  border-radius: 10px;
 }
 
