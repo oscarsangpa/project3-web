@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { httpGet, BASE_IMG } from "../../services/TMBDService/TMDBService";
 
 
@@ -20,8 +21,10 @@ const PopularTVShowsSearched = () => {
         tvShows.map(popShow => {
           return (
             <div key={popShow.id} className="itemMostSearched">
+            <Link to={`/tv/${popShow.id}`}>
               <img src={`${BASE_IMG}${popShow.poster_path}`} alt={popShow.name}/>
               <h5>{popShow.name}</h5>
+            </Link>
             </div>
           )
         })
