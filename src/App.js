@@ -7,6 +7,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "react-query";
+import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 const queryClient = new QueryClient();
@@ -16,12 +17,14 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
         <div>
-          <header>
-            <Navbar/>
-          </header>
-          <main>
-            <MainRouter />
-          </main>
+          <BrowserRouter>
+            <header>
+              <Navbar/>
+            </header>
+            <main>
+              <MainRouter />
+            </main>
+          </BrowserRouter>
         </div>
       </AuthContextProvider>
     </QueryClientProvider>
