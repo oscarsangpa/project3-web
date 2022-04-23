@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from "react";
-import { get } from "./../../utils/httpClient"; /*TUTORIAL*/
-import { MovieCard } from "../../components/movieCard/MovieCard";
-import styles from "../../components/movieCard/MovieCard.css";
-import { Spinner } from "../../components/spinner/Spinner.js";
+import { get } from "../../utils/httpClient"; /*TUTORIAL*/
+import { MovieCard } from "../../components/MovieCard/MovieCard";
+import styles from "../../components/MovieCard/MovieCard.css";
+import { Spinner } from "../../components/Spinner/Spinner.js";
 import InfiniteScroll from "react-infinite-scroll-component"; /*TUTORIAL*/
 // import { Empty } from "./../../components/empty/Empty";/*TUTORIAL*/
 //import React from "react";
