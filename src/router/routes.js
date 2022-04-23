@@ -6,9 +6,9 @@ export const ROUTE = {
     PROFILE: '/profile',
     DETAIL: {
         ROOT:'/detail',
-        ACTOR: '/detail/actor/:actorId',
-        MOVIE: '/detail/movie/:movieId',
-        SERIE: '/detail/serie/:serieId',
+        PERSON: '/person/:personId',
+        MOVIE: '/movie/:movieId',
+        TVSHOW: '/tv/:tvId',
         //TV_SHOW: '/detail/tvShow/:tvShowId',
     }
 }

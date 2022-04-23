@@ -1,7 +1,7 @@
-// import { useEffect, useState } from "react";
-// import PopularMoviesSearched from "../../components/PopularSearched/PopularMoviesSearched";
-// import PopularPersonSearched from "../../components/PopularSearched/PopularPersonSearched";
-// import PopularTVShowsSearched from "../../components/PopularSearched/PopularTVShowsSearched";
+import { useEffect, useState } from "react";
+import PopularMoviesSearched from "../../components/PopularSearched/PopularMoviesSearched";
+import PopularPersonSearched from "../../components/PopularSearched/PopularPersonSearched";
+import PopularTVShowsSearched from "../../components/PopularSearched/PopularTVShowsSearched";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Slider from "../../components/Slider/SliderPOP";
 // import { httpGet } from "../../services/TMBDService/TMDBService";
@@ -39,12 +39,13 @@ const Home = () => {
       <br/>
       <Slider/>
       <h2>______________________________</h2>
-      {/* <h2> - People most searched - </h2>
+      <h2> - People most searched - </h2>
+      <h2> - People most searched - </h2>
       <PopularPersonSearched/>
       <h2> - Movies most searched - </h2>
       <PopularMoviesSearched/>
       <h2>- TV Shows most searched - </h2>
-      <PopularTVShowsSearched/> */}
+      <PopularTVShowsSearched/>
     </>
    );
 }
