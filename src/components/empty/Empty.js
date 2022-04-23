@@ -1,5 +1,7 @@
-import styles from "./Empty.module.css";
+import styles from "./Empty.css";
 
-export function Empty() {
+export default function Empty() {
   return <div className={styles.empty}>No Results</div>;
 }
+
+//  Empty;

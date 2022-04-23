@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from "react";
-import { get } from "../utils/httpClient"; /*TUTORIAL*/
+import { get } from "./../../utils/httpClient"; /*TUTORIAL*/
 import { MovieCard } from "../../components/movieCard/MovieCard";
 import styles from "../../components/movieCard/MovieCard.css";
-import { Spinner } from "./Spinner";
+import { Spinner } from "../../components/spinner/Spinner.js";
 import InfiniteScroll from "react-infinite-scroll-component"; /*TUTORIAL*/
-import { Empty } from "./Empty";/*TUTORIAL*/
+// import { Empty } from "./../../components/empty/Empty";/*TUTORIAL*/
 //import React from "react";
 //import { useGetSearchResult } from "../../services/useGetSearchResult";
 
@@ -12,6 +13,7 @@ export default function Search({ search } /*insertar aquí el elemento a buscar*
   //const getData = useGetSearchResult();
 
   const [movies, setMovies] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -28,9 +30,9 @@ export default function Search({ search } /*insertar aquí el elemento a buscar*
     });
   }, [search, page]);
 
-  if (!isLoading && movies.length === 0) {
-    return <Empty />;
-  }
+  // if (!isLoading && movies.length === 0) {
+  //   return <Empty />;                          /*TUTORIAL*/
+  // }
 
   return (
     // <div>
@@ -48,6 +50,11 @@ export default function Search({ search } /*insertar aquí el elemento a buscar*
       next={() => setPage((prevPage) => prevPage + 1)}
       loader={<Spinner />}
     >
+      <div>
+        <a href="">Actores</a>
+        <a href="">Movies</a>
+        <a href="">Series</a>
+      </div>
       <ul className={styles.moviesGrid}>
         {movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />

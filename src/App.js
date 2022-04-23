@@ -7,6 +7,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "react-query";
+import Navbar from "./components/navbar/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ export function App() {
             <h1>Navbar</h1>
           </header>
           <main>
+            <Navbar />
             <MainRouter />
           </main>
         </div>
