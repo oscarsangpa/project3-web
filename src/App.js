@@ -7,6 +7,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "react-query";
+import Navbar from "./components/Navbar/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +17,7 @@ export function App() {
       <AuthContextProvider>
         <div>
           <header>
-            <h1>Navbar</h1>
+            <Navbar/>
           </header>
           <main>
             <MainRouter />
