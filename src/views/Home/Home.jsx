@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import PopularMoviesSearched from "../../components/PopularSearched/PopularMoviesSearched";
 import PopularPersonSearched from "../../components/PopularSearched/PopularPersonSearched";
 import PopularTVShowsSearched from "../../components/PopularSearched/PopularTVShowsSearched";
