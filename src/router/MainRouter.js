@@ -3,13 +3,13 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ROUTE } from "./routes";
 import ProtectedRoute from "./ProtectedRoute";
 import Home from "../views/Home/Home";
-import Search from "../views/search/Search";
+import Search from "../views/Search/Search";
 import Login from "../views/Login/Login.jsx";
 import Register from "../views/Register/Register";
 import Profile from "../views/Profile/Profile.jsx";
-import ActorDetail from "../views/detail/actorDetail/ActorDetail";
-import MovieDetail from "../views/detail/movieDetail/MovieDetail";
-import SerieDetail from "../views/detail/serieDetail/SerieDetail";
+import ActorDetail from "../views/detail/ActorDetail/ActorDetail";
+import MovieDetail from "../views/detail/MovieDetail/MovieDetail";
+import SerieDetail from "../views/detail/SerieDetail/SerieDetail";
 
 export default function MainRouter() {
   return (
