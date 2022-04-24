@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { httpGet } from "../../services/TMBDService/TMDBService";
+import { httpGet } from "../../services/TMDBService";
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");

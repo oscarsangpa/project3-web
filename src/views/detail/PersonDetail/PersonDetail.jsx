@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { httpGet, BASE_IMG } from "../../../services/TMBDService/TMDBService";
+import { httpGet, BASE_IMG } from "../../../services/TMDBService";
 import "../../../components/PopularSearched/PopularPersonSearched.css"
 import Filmography from "../../../components/Filmography/Filmography";
 
