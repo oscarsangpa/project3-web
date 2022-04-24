@@ -10,6 +10,7 @@ import Profile from "../views/Profile/Profile.jsx";
 import PersonDetail from "../views/detail/PersonDetail/PersonDetail"; 
 import MovieDetail from "../views/detail/MovieDetail/MovieDetail";
 import TvShowDetail from "../views/detail/TvShowDetail/SerieDetail";
+import CastCredit from "../components/CastCredit/CastCredit";
 
 export default function MainRouter() {
   return (
@@ -29,6 +30,7 @@ export default function MainRouter() {
     <Route path={ROUTE.DETAIL.PERSON} element={<PersonDetail />} />
     <Route path={ROUTE.DETAIL.MOVIE} element={<MovieDetail />} />
     <Route path={ROUTE.DETAIL.TVSHOW} element={<TvShowDetail />} />
+    {/* <Route path={ROUTE.CREDIT} element={<CastCredit />} /> */}
   </Routes>
   );
 }

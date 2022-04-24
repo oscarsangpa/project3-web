@@ -10,5 +10,6 @@ export const ROUTE = {
         MOVIE: '/movie/:movieId',
         TVSHOW: '/tv/:tvId',
         //TV_SHOW: '/detail/tvShow/:tvShowId',
-    }
+    },
+    CREDIT: 'credit/:creditId'
 }
