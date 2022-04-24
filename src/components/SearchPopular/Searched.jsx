@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BASE_IMG } from "../../services/TMBDService/TMDBService";
+import { BASE_IMG } from "../../services/TMDBService";
 
 const SearchPopular = (props) => {
   return ( 

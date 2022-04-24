@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { httpGet, BASE_IMG } from "../../../services/TMBDService/TMDBService";
+import { httpGet, BASE_IMG } from "../../../services/TMDBService";
 
 const img= "https://image.tmdb.org/t/p/original"
 

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 
-import { AuthContext } from "../contexts/AuthContext";
+import { useAuthContext } from "../contexts/AuthContext";
 import { ROUTE } from "./routes";
 
 const ProtectedRoute = ({ children }) => {
-  const authContextValue = useContext(AuthContext);
+  const authContextValue = useContext(useAuthContext);
   if (!authContextValue.user) {
     return <Navigate to={ROUTE.LOGIN} replace />;
   }

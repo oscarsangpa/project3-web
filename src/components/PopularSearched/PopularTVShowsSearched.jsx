@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { httpGet, BASE_IMG } from "../../services/TMBDService/TMDBService";
+import { httpGet, BASE_IMG } from "../../services/TMDBService";
 
 
 const PopularTVShowsSearched = () => {

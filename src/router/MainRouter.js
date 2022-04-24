@@ -5,7 +5,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Home from "../views/Home/Home.jsx";
 // import Search from "../views/Search/Search.jsx";
 import Login from "../views/Login/Login.jsx";
-import Register from "../views/Register/Register";
+import Register from "../views/Register/register";
 import Profile from "../views/Profile/Profile.jsx";
 import PersonDetail from "../views/detail/PersonDetail/PersonDetail"; 
 import MovieDetail from "../views/detail/MovieDetail/MovieDetail";

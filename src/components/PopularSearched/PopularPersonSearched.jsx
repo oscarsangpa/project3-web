@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { httpGet, BASE_IMG } from "../../services/TMBDService/TMDBService"
+import { httpGet, BASE_IMG } from "../../services/TMDBService"
 import Slider from "../Slider/SliderPOP";
 import "./PopularPersonSearched.css"
 import { Link } from "react-router-dom";
