@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Filmography = ({credits}) => {
   const [sorted, setSorted] = useState([])
@@ -18,9 +19,14 @@ const Filmography = ({credits}) => {
          return (
            <ul key={index}>
              <li>
-             {credit.release_date} -
-             {credit.title} as
-             {credit.character}
+             {`${credit.release_date} - `}
+             <Link to={`/movie/${credit.id}`}>
+             {credit.title}
+             </Link>
+               {` as ${credit.character}`}
+
+               {/* {`${credit.release_date} - ${<Link to={`/movie/${credit.id}`}> {credit.title} </Link>} as ${credit.character}`} */}
+
              </li>
            </ul>
          )
