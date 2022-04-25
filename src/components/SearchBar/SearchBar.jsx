@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { Link, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { httpGet } from "../../services/TMDBService";
+import { httpGet, BASE_IMG } from "../../services/TMDBService";
+
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");
@@ -41,6 +42,8 @@ const SearchBar = () => {
     }
   }, [query])
 
+
+
   return (
     <>
       <div>
@@ -54,10 +57,25 @@ const SearchBar = () => {
           </form>
         </h4>
         {
-          searched.map((({name, id}) => {
+          searched?.map((({name, id, title, profile_path, poster_path}) => {
             return (
               <>
-                <p key={id}>{name}</p>
+                <div>
+                  { profile_path &&
+                    (<Link to={`/person/${id}`}>
+                      <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
+                    </Link>)  
+                  }
+                  { title ? (<Link to={`/movie/${id}`}>
+                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
+                    </Link>)
+                  :
+                    (<Link to={`/tv/${id}`}>
+                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
+                    </Link>)                                      
+                  }
+                  <p key={id}>{name}</p>
+                </div>
               </>
             )
           }))
@@ -82,3 +100,8 @@ const SearchBar = () => {
 }
  
 export default SearchBar;
+
+// :
+//                     <Link to={`/tv/${id}`}>
+//                       (<img src={`${BASE_IMG}${poster_path}`} alt=""/>)
+//                     </Link>
