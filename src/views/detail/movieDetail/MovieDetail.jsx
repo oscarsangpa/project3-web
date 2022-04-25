@@ -9,21 +9,34 @@ export default function MovieDetail() {
   const [detailMovie, setDetailMovie] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
   const { movieId } = useParams()
-  const {creditId} = useRef()
 
   useEffect(() => {
     if(movieId) {
       httpGet(`/movie/${movieId}`)
-        .then(movie => setDetailMovie(movie))
+        .then(movie => {
+          console.log(movie);
+          setDetailMovie(movie)
+
+        })
         .catch(error => console.log(error))
-      }
-     if (creditId) {
-       httpGet(`/credit/${creditId}`)
-         .then(credit => setCreditChar(credit))
+        httpGet(`/movie/${movieId}/credits`)
+         .then(credit => {
+          console.log(credit)
+          setCreditChar(credit)
+          })
          .catch(error => console.log(error))
          console.log("el cast", creditChar)
-     }
-  },[movieId, creditId])
+      }
+    //  if (movieId) {
+    //    httpGet(`/movie/${movieId}/credits`)
+    //      .then(credit => {
+    //       console.log(credit)
+    //       setCreditChar(credit)
+    //       })
+    //      .catch(error => console.log(error))
+    //      console.log("el cast", creditChar)
+    //  }
+  },[movieId])
 
 
     return (
@@ -32,37 +45,50 @@ export default function MovieDetail() {
          - Página MovieDetail -
         </h3>
         <p>{detailMovie.original_title}</p>
+
         <img src={`${img}${detailMovie.poster_path}`} alt={""}/>
-        {/* <p>{detailMovie.release_date}</p>
-        {detailMovie.production_company.map(production => {
-          return (
-            <>
-              <p>{production.name}</p>
-            </>
-          )
-        })} */}
-        {/* <p>{detailMovie.}</p> */}
-        <p></p>
+
+        <p>{detailMovie.release_date}</p>
 
         {
-          creditChar?.map(char => {
+          detailMovie?.production_companies?.map(production => {
             return (
-              <div className="containerMostSearched">
-                {creditChar.map(credit => {
-                  return (
-                    <div key={credit.id} className="itemMostSearched">
-                    <Link to={`/credit/${credit.id}`}>
-                      <img src={`${BASE_IMG}${credit.poster_path}`} alt={credit.title}/>
-                      <h5>{credit.title}</h5>
-                    </Link>
-                    </div>
-                  )
-                })
-                }
-        </div>
+              <>
+                <ul>
+                  <li>{production.name}</li>
+                </ul>
+              </>
+            )
+        })}
+        
+        <p>- Genres -</p>
+        {
+          detailMovie?.genres?.map(genres => {
+            return (
+              <>
+              <ul>
+                  <li>{genres.name}</li>
+                </ul>
+              </>
+            )
+        })}
+
+        <p>- Overviews -</p>
+        <p>{detailMovie.overview}</p>
+
+        <div className="containerMostSearched">
+          {creditChar.cast?.map(credit => {
+            return (
+              <div key={credit.id} className="itemMostSearched">
+              <Link to={`/movie/${credit.id}`}>
+                <img src={`${BASE_IMG}${credit.profile_path}`} alt={credit.title}/>
+                <h5>{credit.title}</h5>
+              </Link>
+              </div>
             )
           })
-        }
+          }
+        </div>
 
       </div>
     );
