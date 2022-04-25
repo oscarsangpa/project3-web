@@ -25,7 +25,21 @@ const Register = () => {
     setBackErrors({})
     setIsSubmitting(true)
 
-    registerRequest(data)
+    const bodyFormData = new FormData()
+
+    const { image, ...rest } = data
+
+    Object.keys(rest).forEach(key => {
+      bodyFormData.append(key, rest[key])
+    })
+
+    if (image[0]) {
+      bodyFormData.append('image', image[0])
+    }
+
+
+    registerRequest(bodyFormData)
+
       .then((user) => {
         navigate('/login')
       })
@@ -62,6 +76,13 @@ const Register = () => {
           error={backErrors?.password || errors.password?.message}
           type="password"
         />
+        <InputGroup
+          label="User image"
+          id="image"
+          register={register}
+          error={backErrors?.image || errors.image?.message}
+          type="file"
+        />
 
         <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Creating user...' : 'Submit'}</button>
       </form>
@@ -69,71 +90,4 @@ const Register = () => {
   )
 }
 
-export default Register
-
-
-// import { useState } from "react";
-// import { useForm } from "react-hook-form";
-// // import { yupResolver } from '@hookform/resolvers/yup';
-// // import * as yup from "yup";
-// import { useNavigate } from 'react-router-dom';
-// import InputGroup from "../../components/InputGroup/InputGroup";
-// import { register as registerRequest } from '../../services/UsersService'
-
-// // const schema = yup.object({
-//   // name: yup.string().required(),
-// //   email: yup.string().email().required(),
-// //   password: yup.string().min(8, 'funciona').required()
-// // }).required();
-
-// const Register = () => {
-//   const [isSubmitting, setIsSubmitting] = useState(false);
-//   const [backErrors, setBackErrors] = useState[{}]
-//   const navigate = useNavigate()
-//   // const { register, handleSubmit, formState:{ errors } } = useForm({
-//   //   resolver: yupResolver(schema)
-//   // });
-
-//   const onSubmit = data => {
-//     setBackErrors({})
-//     setIsSubmitting(true)
-
-//     registerRequest(data)
-//       .then((user) => {
-//         navigate('/login')
-//       })
-//       .catch(err => {
-//         setBackErrors(err?.response?.data?.errors)
-//       })
-//       .finally(() => {
-//         setIsSubmitting(false)
-//       })
-//   }
-//   return ( 
-//     <>
-//       <h4>Register</h4>
-//       {/* <form onSubmit={handleSubmit(onSubmit)}>
-//       <InputGroup 
-//         label="Name"
-//         id="name"
-//         register={register}
-//         type="name"
-//       />
-//       <InputGroup 
-//         label="Email"
-//         id="email"
-//         register={register}
-//         type="email"
-//       />
-//       <InputGroup 
-//         label="Password"
-//         id="password"
-//         register={register}
-//         type="password"
-//       />
-//       </form> */}
-//     </>
-//    );
-// }
- 
-// export default Register;
+export default Register;

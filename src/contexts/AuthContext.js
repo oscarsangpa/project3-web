@@ -1,3 +1,48 @@
+import { createContext, useContext, useState, useEffect } from 'react'
+import { getCurrentUser } from '../services/UsersService'
+import { getAccessToken, setAccessToken } from '../store/AccessTokenStore';
+
+export const AuthContext = createContext()
+
+export const useAuthContext = () => useContext(AuthContext)
+
+
+export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState()
+  
+  const login = (token) => {
+    setAccessToken(token)
+
+    getUser()
+  }
+
+  const getUser = () => {
+    getCurrentUser()
+    .then(userFromAPI => setUser(userFromAPI))
+  }
+  
+  useEffect(() => {
+    // token?
+    if (getAccessToken()) {
+      getUser()
+    }
+  }, [])
+  
+  const value = {
+    user,
+    login
+  }
+  
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+
+export default AuthContextProvider;
+
+
 // import { useState, createContext } from "react";
 
 // export const AuthContext = createContext();
@@ -26,47 +71,73 @@
 
 //_______________________________________
 
-import { createContext, useContext, useState, useEffect } from 'react'
-import { getCurrentUser } from '../services/UsersService'
-import { getAccessToken, setAccessToken } from '../store/AccessTokenStore';
+// import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react'
+// import { useLocation, useNavigate } from 'react-router-dom'
+// import { getCurrentUser } from '../services/UsersService'
+// import { getAccessToken, logout, setAccessToken } from '../store/accessTokenStore'
+// import { isValidJwt } from '../utils/jwt'
 
-export const AuthContext = createContext()
+// const AuthContext = createContext()
 
-export const useAuthContext = () => useContext(AuthContext)
+// export const useAuthContext = () => useContext(AuthContext)
 
+// export const AuthContextProvider = ({ children }) => {
+//   const navigate = useNavigate()
+//   let location = useLocation();
+//   const fetchedRef = useRef(false)
 
-export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState()
+//   let from = location.state?.from?.pathname || "/profile";
 
-  const login = (token) => {
-    setAccessToken(token)
+//   const [user, setUser] = useState()
+//   const [authenticationChecked, setAuthenticationChecked] = useState(false)
 
-    getUser()
-  }
+//   const login = (token) => {
+//     setAccessToken(token)
 
-  const getUser = () => {
-    getCurrentUser()
-      .then(userFromAPI => setUser(userFromAPI))
-  }
+//     getUser(true)
+//   }
 
-  useEffect(() => {
-    // token?
-    if (getAccessToken()) {
-      getUser()
-    }
-  }, [])
+//   const getUser = useCallback((isLogin) => {
+//     getCurrentUser()
+//       .then(userFromAPI => {
+//         setUser(userFromAPI)
 
-  const value = {
-    user,
-    login
-  }
+//         setAuthenticationChecked(true)
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  )
-}
+//         if (isLogin) {
+//           navigate(from, { replace: true })
+//         }
+//       })
+//   }, [navigate, from])
 
-export default AuthContextProvider;
+//   useEffect(() => {
+//     if (!fetchedRef.current) {
+//       console.log('sdjhlasdh')
+//       // token?
+//       if (getAccessToken()) {
+//         console.log(getAccessToken())
+//         if (isValidJwt(getAccessToken())) {
+//           getUser()
+//         } else {
+//           logout()
+//         }
+//       } else {
+//         setAuthenticationChecked(true)
+//       }
+//       fetchedRef.current = true
+//     }
+//   }, [getUser])
 
+//   const value = {
+//     user,
+//     login,
+//     authenticationChecked
+//   }
+
+//   return (
+//     <AuthContext.Provider value={value}>
+//       {children}
+//     </AuthContext.Provider>
+//   )
+// }
+// export default AuthContext
