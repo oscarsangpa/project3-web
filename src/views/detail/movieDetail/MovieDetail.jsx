@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { httpGet, BASE_IMG } from "../../../services/TMDBService";
 
 const img= "https://image.tmdb.org/t/p/original"
@@ -7,9 +7,9 @@ const img= "https://image.tmdb.org/t/p/original"
 
 export default function MovieDetail() {
   const [detailMovie, setDetailMovie] = useState([]);
-  // const [creditChar, setCreditChar] = useState([]);
+  const [creditChar, setCreditChar] = useState([]);
   const { movieId } = useParams()
-  const {creditId} = useParams()
+  const {creditId} = useRef()
 
   useEffect(() => {
     if(movieId) {
@@ -17,13 +17,13 @@ export default function MovieDetail() {
         .then(movie => setDetailMovie(movie))
         .catch(error => console.log(error))
       }
-    //  if (creditId) {
-    //    httpGet(`/credit/${creditId}`)
-    //      .then(credit => setCreditChar(credit))
-    //      .catch(error => console.log(error))
-    //      console.log("el cast", creditChar)
-    //  }
-  },[movieId])
+     if (creditId) {
+       httpGet(`/credit/${creditId}`)
+         .then(credit => setCreditChar(credit))
+         .catch(error => console.log(error))
+         console.log("el cast", creditChar)
+     }
+  },[movieId, creditId])
 
 
     return (
@@ -33,18 +33,36 @@ export default function MovieDetail() {
         </h3>
         <p>{detailMovie.original_title}</p>
         <img src={`${img}${detailMovie.poster_path}`} alt={""}/>
+        {/* <p>{detailMovie.release_date}</p>
+        {detailMovie.production_company.map(production => {
+          return (
+            <>
+              <p>{production.name}</p>
+            </>
+          )
+        })} */}
+        {/* <p>{detailMovie.}</p> */}
+        <p></p>
 
-        {/* {
+        {
           creditChar?.map(char => {
             return (
-              <div>
-                <p>{char.name}</p>
-                <p>{char.character}</p>
-                <p>{char.original_name}</p>
-              </div>
+              <div className="containerMostSearched">
+                {creditChar.map(credit => {
+                  return (
+                    <div key={credit.id} className="itemMostSearched">
+                    <Link to={`/credit/${credit.id}`}>
+                      <img src={`${BASE_IMG}${credit.poster_path}`} alt={credit.title}/>
+                      <h5>{credit.title}</h5>
+                    </Link>
+                    </div>
+                  )
+                })
+                }
+        </div>
             )
           })
-        } */}
+        }
 
       </div>
     );
