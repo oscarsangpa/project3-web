@@ -7,9 +7,9 @@ import Search from "../views/search/Search";
 import Login from "../views/Login/Login";
 import Register from "../views/Register/Register";
 import Profile from "../views/Profile/Profile";
-import ActorDetail from "../views/detail/actorDetail/ActorDetail";
-import MovieDetail from "../views/detail/movieDetail/MovieDetail";
-import SerieDetail from "../views/detail/serieDetail/SerieDetail";
+import PersonDetail from "../views/detail/PersonDetail/PersonDetail";
+import MovieDetail from "../views/detail/MovieDetail/MovieDetail";
+import TvDetail from "../views/Detail/TvDetail/TvDetail";
 
 export default function MainRouter() {
   return (
@@ -27,9 +27,9 @@ export default function MainRouter() {
             </ProtectedRoute>
           }
         />
-        <Route path={ROUTE.DETAIL.ACTOR} element={<ActorDetail />} />
+        <Route path={ROUTE.DETAIL.ACTOR} element={<PersonDetail />} />
         <Route path={ROUTE.DETAIL.MOVIE} element={<MovieDetail />} />
-        <Route path={ROUTE.DETAIL.SERIE} element={<SerieDetail />} />
+        <Route path={ROUTE.DETAIL.SERIE} element={<TvDetail />} />
       </Routes>
     </BrowserRouter>
   );
