@@ -1,7 +1,7 @@
 import { Link, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { httpGet, BASE_IMG } from "../../services/TMDBService";
-
+import SearchPag from "../../views/Search/Search";
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");
@@ -9,7 +9,7 @@ const SearchBar = () => {
   const [query, setQuery] = useSearchParams({});
 
   // const history = useHistory()
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
 
   const handleSubmit = (event) => {
@@ -20,16 +20,6 @@ const SearchBar = () => {
   const handleChange = (event) => {
     setInputSearch(event.target.value)
   }
-
-  // useEffect(()=> {
-  //   // setLoading(true)
-  //   console.log('object');
-  //   httpGet("/search/multi/?query=")
-  //     .then((data) => {
-  //       setSearched(data.results)
-  //         // setLoading(false)
-  //     })
-  // }, []);
 
   useEffect(()=> {
     if(query.get('search')) {

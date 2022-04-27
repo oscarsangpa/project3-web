@@ -14,27 +14,15 @@ export default function MovieDetail() {
     if(movieId) {
       httpGet(`/movie/${movieId}`)
         .then(movie => {
-          // console.log(movie);
           setDetailMovie(movie)
-
         })
         .catch(error => console.log(error))
-        httpGet(`/movie/${movieId}/credits`)
-         .then(credit => {
-          // console.log(credit)
+      httpGet(`/movie/${movieId}/credits`)
+        .then(credit => {
           setCreditChar(credit)
-          })
-         .catch(error => console.log(error))
-      }
-    //  if (movieId) {
-    //    httpGet(`/movie/${movieId}/credits`)
-    //      .then(credit => {
-    //       console.log(credit)
-    //       setCreditChar(credit)
-    //       })
-    //      .catch(error => console.log(error))
-    //      console.log("el cast", creditChar)
-    //  }
+        })
+        .catch(error => console.log(error))
+    }
   },[movieId])
 
 
