@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { httpGet, BASE_IMG } from "../../../services/TMDBService";
 
-const img= "https://image.tmdb.org/t/p/original"
-
-
 export default function MovieDetail() {
   const [detailMovie, setDetailMovie] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
@@ -33,7 +30,7 @@ export default function MovieDetail() {
         </h3>
         <p>{detailMovie.original_title}</p>
 
-        <img src={`${img}${detailMovie.poster_path}`} alt={""}/>
+        <img src={`${BASE_IMG}${detailMovie.poster_path}`} alt={""}/>
 
         <p>{detailMovie.release_date}</p>
 

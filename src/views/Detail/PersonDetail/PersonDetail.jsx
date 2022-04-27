@@ -26,15 +26,9 @@ export default function PersonDetail() {
 
     return (
       <div>
-        <h3>- Página PersonDetail -</h3>
-        
-        <PersonInformation/>
+        <PersonInformation personInfo={detailPerson}/>
 
-        <h3>- Known For:</h3>
-
-        <KnownFor />
-
-        <h3>- Filmography - </h3>
+        <KnownFor creditCast={creditPerson} />
 
         <Filmography credits={creditPerson}/>
 

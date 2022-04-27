@@ -14,6 +14,7 @@ const Filmography = ({credits}) => {
  
   return ( 
     <>
+        <h3>- Filmography - </h3>
      {
       sorted?.map((credit, index) => {
          return (

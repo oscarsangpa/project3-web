@@ -1,7 +1,59 @@
-const SearchPag = () => {
+import { Link } from "react-router-dom";
+import { BASE_IMG } from "../../services/TMDBService";
+
+const SearchPag = ({searched}) => {
+    let type = "";
+    let typeImg = "";
+
+        if (searched.media_type === "person") {
+            type = "person"
+            typeImg = searched.profile_path
+        }
+        if (searched.media_type === "movie") {
+            type = "movie"
+            typeImg = searched.poster_path
+        }
+        if (searched.media_type === "tv") {
+            type = "tv"
+            typeImg = searched.poster_path
+        }
+
     return ( 
         <>
         <p>SearchPag</p>
+        {
+          searched?.map((({name, id, title, profile_path, poster_path}) => {
+            return (
+              <>
+              <div key={id}>
+                <Link to={`/${type}/${id}`}>
+                    <img src={`${BASE_IMG}${typeImg}`} alt=""/> 
+                    <p key={id}>{name}</p>
+                </Link>
+              </div>
+                {/* <div>
+                  { profile_path &&
+                    (<Link to={`/${type}/${id}`}>
+                      <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
+                        <p key={id}>{name}</p>
+                    </Link>)  
+                  }
+
+                  { title ? (<Link to={`/${type}/${id}`}>
+                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
+                    </Link>)
+                  :
+                  (<Link to={`/${type}/${id}`}>
+                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
+                    </Link>)                                      
+                  }
+                        <p key={id}>{title}</p>
+
+                </div> */}
+              </>
+            )
+          }))
+        }
         </>
      );
 }

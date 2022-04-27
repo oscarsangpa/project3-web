@@ -46,11 +46,14 @@ const SearchBar = () => {
             <button type="submit"> search </button>
           </form>
         </h4>
+          {/* <SearchPag searched={searched} /> */}
+          {}
         {
           searched?.map((({name, id, title, profile_path, poster_path}) => {
             return (
               <>
-                <div>
+              <p>{name}</p>
+                {/* <div>
                   { profile_path &&
                     (<Link to={`/person/${id}`}>
                       <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
@@ -65,7 +68,7 @@ const SearchBar = () => {
                     </Link>)                                      
                   }
                   <p key={id}>{name}</p>
-                </div>
+                </div> */}
               </>
             )
           }))
@@ -73,25 +76,7 @@ const SearchBar = () => {
       </div>
     </>
   )
-  // return ( 
-  //   <>
-  //   <div>
-  //      <h4>SearchBarTEST</h4>
-  //      <form onSubmit={handleSubmit}>
-  //        <input type="text" 
-  //          value={inputSearch} 
-  //          onChange={handleChange}  
-  //          />
-  //        <button type="submit">Search</button>
-  //      </form>
-  //   </div>
-  //   </>
-  //  );
+
 }
  
 export default SearchBar;
-
-// :
-//                     <Link to={`/tv/${id}`}>
-//                       (<img src={`${BASE_IMG}${poster_path}`} alt=""/>)
-//                     </Link>

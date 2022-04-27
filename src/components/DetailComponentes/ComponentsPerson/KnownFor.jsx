@@ -1,30 +1,14 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { httpGet, BASE_IMG } from "../../../services/TMDBService";
+import { Link } from "react-router-dom";
+import { BASE_IMG } from "../../../services/TMDBService";
 
-export default function KnownFor() {
-    const [detailPerson, setDetailPerson] = useState([]);
-    const [creditPerson, setCreditPerson] = useState();
-    const { personId} = useParams();
-  
-    useEffect(()=> {
-      if(personId) {
-        httpGet(`/person/${personId}`)
-          .then(person => setDetailPerson(person))
-          .catch(error => console.log(error))
+export default function KnownFor({creditCast}) {
     
-        httpGet(`/person/${personId}/combined_credits`)
-          .then(credit => setCreditPerson(credit))
-          .catch(error => console.log(error))
-      }
-        
-    },[personId])
-
     return (
         <>
+            <h3>- Known For:</h3>
             <div className="containerMostSearched">
         {
-          creditPerson?.cast.map(person => {
+          creditCast?.cast.map(person => {
             return (
               <div key={person.id} className="itemMostSearched">
               <Link to={`/movie/${person.id}`}>
