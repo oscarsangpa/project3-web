@@ -64,7 +64,7 @@ export default function MovieDetail() {
           {creditChar.cast?.map(credit => {
             return (
               <div key={credit.id} className="itemMostSearched">
-              <Link to={`/movie/${credit.id}`}>
+              <Link to={`/person/${credit.id}`}>
                 <img src={`${BASE_IMG}${credit.profile_path}`} alt={credit.title}/>
                 <h5>{credit.title}</h5>
               </Link>
