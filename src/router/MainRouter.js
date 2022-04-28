@@ -6,7 +6,7 @@ import Home from "../views/Home/Home.jsx";
 // import Search from "../views/Search/Search.jsx";
 import Login from "../views/Login/Login.jsx";
 import Register from "../views/Register/Register";
-import Profile from "../views/Profile/Profile.jsx";
+import Profile from "../views/Profile/Profile";
 import PersonDetail from "../views/Detail/PersonDetail/PersonDetail"; 
 import MovieDetail from "../views/Detail/MovieDetail/MovieDetail";
 import TvDetail from "../views/Detail/TvDetail/TvDetail";
@@ -30,7 +30,6 @@ export default function MainRouter() {
     <Route path={ROUTE.DETAIL.PERSON} element={<PersonDetail />} />
     <Route path={ROUTE.DETAIL.MOVIE} element={<MovieDetail />} />
     <Route path={ROUTE.DETAIL.TVSHOW} element={<TvDetail />} />
-    {/* <Route path={ROUTE.CREDIT} element={<CastCredit />} /> */}
   </Routes>
   );
 }

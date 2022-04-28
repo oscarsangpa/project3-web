@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthButtons from "../AuthButtons/AuthButtons";
+import SearchBar from "../SearchBar/SearchBar";
 
 // import Link frm "react-router-dom";
 const Navbar = () => {
   const [authBtn, setAuthBtn] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false)
 
-  const showBtn = () => {
-    setAuthBtn(!authBtn)
+  // const showBtn = () => {
+  //   setAuthBtn(!authBtn)
+  // }
+
+  const showBar = () => {
+    setShowSearchBar(!showSearchBar)
+    console.log("funcionaaaaaaaaaaaaaaaaaaaaa")
   }
 
   return ( 
@@ -20,7 +27,12 @@ const Navbar = () => {
           </Link> */}
           <AuthButtons/>
           
-          <button >Search</button>
+          <button onClick={() => showBar()}>Search</button>
+
+          {showSearchBar &&
+            <SearchBar/>
+          }
+
           <button>{/*ICONO DE MODO NOCHE*/}</button>
       </ul>
     </>

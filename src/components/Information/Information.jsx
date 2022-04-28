@@ -9,7 +9,7 @@ const Information = (props) => {
           <img src={`${BASE_IMG}${props.info.poster_path}`} alt={""}/>
         <p>
         <strong>Release date: </strong>
-        {props.info?.release_date || props.info.first_air_date}
+        {props.info?.release_date || props.info?.first_air_date}
         </p>
 
           <h4> - Companies - </h4>

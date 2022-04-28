@@ -6,11 +6,13 @@
 }
 .containerMostSearched {
   display: flex;
+  overflow-x: scroll;
 }
 
 .itemMostSearched {
   flex-direction: column;
   margin-left: 15px;
+  cursor: grab;
 }
 
 img {

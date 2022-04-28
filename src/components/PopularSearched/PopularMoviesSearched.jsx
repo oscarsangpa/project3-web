@@ -10,7 +10,7 @@ const PopularMoviesSearched = () => {
   useEffect(()=> {
     httpGet("/movie/popular")
       .then(movie => {
-        console.log(movie);
+        // console.log(movie);
         setMovies(movie.results)
       })
       .catch(error => console.log(error))

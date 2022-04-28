@@ -37,8 +37,8 @@ const Home = () => {
     <>
       <SearchBar />
       <br/>
-      <Slider/>
-      <h2>______________________________</h2>
+      {/* <Slider/> */}
+      {/* <h2>______________________________</h2> */}
       <h2> - People most searched - </h2>
       <PopularPersonSearched/>
       <h2> - Movies most searched - </h2>

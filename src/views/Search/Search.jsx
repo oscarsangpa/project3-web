@@ -1,36 +1,79 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Filter from "../../components/Filter/Filter";
 import { BASE_IMG } from "../../services/TMDBService";
 
 const SearchPag = ({searched}) => {
-    let type = "";
-    let typeImg = "";
+  const [listToShow, setListToShow] = useState("");
 
-        if (searched.media_type === "person") {
-            type = "person"
-            typeImg = searched.profile_path
-        }
-        if (searched.media_type === "movie") {
-            type = "movie"
-            typeImg = searched.poster_path
-        }
-        if (searched.media_type === "tv") {
-            type = "tv"
-            typeImg = searched.poster_path
-        }
+
+
+
+
+
+  const filterMovie = searched.filter(search => search.media_type === "movie")
+  const filterTv = searched.filter(search => search.media_type === "tv")
+  const filterPerson = searched.filter(search => search.media_type === "person")
+  // console.log(filterMovie)
+
+    // let type = "";
+    // let typeImg = "";
+
+    //     if (searched.media_type === "person") {
+    //         type = "person"
+    //         typeImg = searched.profile_path
+    //     }
+    //     if (searched.media_type === "movie") {
+    //         type = "movie"
+    //         typeImg = searched.poster_path
+    //     }
+    //     if (searched.media_type === "tv") {
+    //         type = "tv"
+    //         typeImg = searched.poster_path
+    //     }
 
     return ( 
         <>
-        <p>SearchPag</p>
+            <p onClick={() => setListToShow("movie")}> 
+            Movies: {filterMovie.length} 
+            </p>
+
+            <p onClick={() => setListToShow("tv")}>
+            TvShows: {filterTv.length} 
+            </p>
+
+            <p onClick={() => setListToShow("person")}>
+            Persons: {filterPerson.length}
+            </p>
+
+            {listToShow=== "movie" &&  
+              <Filter list={filterMovie} />
+            }
+
+            {listToShow=== "tv" &&
+              <div>
+              <Filter list={filterTv} />
+              </div>
+            }
+
+            {listToShow=== "person" &&
+              <div>
+              <Filter list={filterPerson} />
+              </div>
+           
+            }
+
         {
           searched?.map((({name, id, title, profile_path, poster_path}) => {
             return (
               <>
               <div key={id}>
-                <Link to={`/${type}/${id}`}>
-                    <img src={`${BASE_IMG}${typeImg}`} alt=""/> 
+                <Link to={`/person/${id}`}>
+                    <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
                     <p key={id}>{name}</p>
                 </Link>
               </div>
+
                 {/* <div>
                   { profile_path &&
                     (<Link to={`/${type}/${id}`}>

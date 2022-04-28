@@ -25,6 +25,7 @@ export default function MovieDetail() {
         .catch(error => console.log(error))
     }
   },[movieId])
+  let num = 1
 
     return (
       <div>

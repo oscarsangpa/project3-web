@@ -52,23 +52,24 @@ const SearchBar = () => {
           searched?.map((({name, id, title, profile_path, poster_path}) => {
             return (
               <>
-              <p>{name}</p>
-                {/* <div>
-                  { profile_path &&
+              <SearchPag searched={searched}/>
+              {/* <p>{name}</p> */}
+                <div>
+                  {/* { profile_path &&
                     (<Link to={`/person/${id}`}>
                       <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
                     </Link>)  
                   }
-                  { title ? (<Link to={`/movie/${id}`}>
+                  { title && (<Link to={`/movie/${id}` || `/tv/${id}`}>
                       <img src={`${BASE_IMG}${poster_path}`} alt=""/>
                     </Link>)
-                  :
-                    (<Link to={`/tv/${id}`}>
+                  } */}
+                  {/* : */}
+                    {/* (<Link to={`/tv/${id}`}>
                       <img src={`${BASE_IMG}${poster_path}`} alt=""/>
-                    </Link>)                                      
-                  }
+                    </Link>)                                       */}
                   <p key={id}>{name}</p>
-                </div> */}
+                </div>
               </>
             )
           }))
