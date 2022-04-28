@@ -5,7 +5,7 @@ const TvInformation = ({tvInfo}) => {
     <>
       {/* <div style={{backgroungImage: `${BASE_IMG}${background}`}}> */}
 
-        <h2>{tvInfo?.original_name}</h2>
+        <>{tvInfo?.original_name}</>
         <img src={`${BASE_IMG}${tvInfo?.poster_path}`} alt={""}/>
 
         <p>{tvInfo?.release_date}</p>

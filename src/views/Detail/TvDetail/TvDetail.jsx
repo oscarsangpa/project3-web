@@ -4,6 +4,7 @@ import { BASE_IMG, httpGet } from "../../../services/TMDBService";
 import TvInformation from "../../../components/DetailComponentes/Tv/TvInformation";
 import TvCast from "../../../components/DetailComponentes/Tv/TvCast";
 import Cast from "../../../components/Cast/Cast";
+import Information from "../../../components/Information/Information";
 
 export default function SerieDetail() {
 
@@ -39,7 +40,8 @@ export default function SerieDetail() {
 
     return (
       <>
-        <TvInformation tvInfo={detailTv}/>
+        {/* <TvInformation tvInfo={detailTv}/> */}
+        <Information info={detailTv}/>
         <Cast cast={creditChar}/>
       </>
       

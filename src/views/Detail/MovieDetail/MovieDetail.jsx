@@ -4,6 +4,7 @@ import { httpGet, BASE_IMG } from "../../../services/TMDBService";
 import MovieInformation from "../../../components/DetailComponentes/Movie/MovieInformation";
 // import MovieCast from "../../../components/DetailComponentes/Movie/MovieCast";
 import Cast from "../../../components/Cast/Cast";
+import Information from "../../../components/Information/Information";
 
 export default function MovieDetail() {
   const [detailMovie, setDetailMovie] = useState([]);
@@ -27,7 +28,8 @@ export default function MovieDetail() {
 
     return (
       <div>
-        <MovieInformation movieInfo={detailMovie}/>
+        {/* <MovieInformation movieInfo={detailMovie}/> */}
+        <Information info={detailMovie}/>
         {/* <MovieCast movieCast={creditChar}/> */}
         <Cast cast={creditChar}/>
       </div>
