@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BASE_IMG, httpGet } from "../../../services/TMDBService";
+import TvInformation from "../../../components/DetailComponentes/ComponentsTv/TvInformation";
+import TvCast from "../../../components/DetailComponentes/ComponentsTv/TvCast";
 
 export default function SerieDetail() {
 
@@ -35,57 +37,62 @@ export default function SerieDetail() {
   },[tvId])
 
     return (
-      <div>
-          <h3>- TV Shows detail -</h3>
-          <div style={{backgroungImage: `${BASE_IMG}${background}`}}>
+      <>
+        <TvInformation tvInfo={detailTv}/>
+        <TvCast tvInfo={creditChar}/>
+      </>
+      
+      // <div>
+      //   <h3>- TV Shows detail -</h3>
+      //   <div style={{backgroungImage: `${BASE_IMG}${background}`}}>
 
-          <p>{detailTv.original_name}</p>
+      //     <p>{detailTv.original_name}</p>
 
-          <img src={`${BASE_IMG}${detailTv?.poster_path}`} alt={""}/>
+      //     <img src={`${BASE_IMG}${detailTv?.poster_path}`} alt={""}/>
 
-          <p>{detailTv.release_date}</p>
+      //     <p>{detailTv.release_date}</p>
 
-          {
-          detailTv?.production_companies?.map(production => {
-            return (
-              <>
-                <ul>
-                  <li>{production.name}</li>
-                </ul>
-              </>
-            )
-          })}
+      //     {
+      //     detailTv?.production_companies?.map(production => {
+      //       return (
+      //         <>
+      //           <ul>
+      //             <li>{production.name}</li>
+      //           </ul>
+      //         </>
+      //       )
+      //     })}
 
-          <p>- Genres -</p>
-          {
-            detailTv?.genres?.map(genres => {
-              return (
-                <>
-                <ul>
-                    <li>{genres.name}</li>
-                  </ul>
-                </>
-              )
-          })}
+      //     <p>- Genres -</p>
+      //     {
+      //       detailTv?.genres?.map(genres => {
+      //         return (
+      //           <>
+      //           <ul>
+      //               <li>{genres.name}</li>
+      //             </ul>
+      //           </>
+      //         )
+      //       })
+      //     }
 
-          <p>- Overviews -</p>
-          <p>{detailTv.overview}</p>
+      //     <p>- Overviews -</p>
+      //     <p>{detailTv.overview}</p>
+      //     </div>
 
-          <div className="containerMostSearched">
-            {creditChar.cast?.map(credit => {
-              return (
-                <div key={credit.id} className="itemMostSearched">
-                <Link to={`/person/${credit.id}`}>
-                  <img src={`${BASE_IMG}${credit.profile_path}`} alt={credit.title}/>
-                  <h5>{credit.title}</h5>
-                </Link>
-                </div>
-              )
-            })
-            }
-        </div>
-          
-          </div>
-      </div>
+      //     <div className="containerMostSearched">
+      //       {creditChar.cast?.map(credit => {
+      //         return (
+      //           <div key={credit.id} className="itemMostSearched">
+      //           <Link to={`/person/${credit.id}`}>
+      //             <img src={`${BASE_IMG}${credit.profile_path}`} alt={credit.title}/>
+      //             <h5>{credit.title}</h5>
+      //           </Link>
+      //           </div>
+      //         )
+      //       })
+      //       }
+      //     </div>
+      // </div>
     );
 }
