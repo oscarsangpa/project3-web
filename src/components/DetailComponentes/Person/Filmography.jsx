@@ -6,7 +6,6 @@ const Filmography = ({credits}) => {
 
   useEffect(() => {
     if(credits) {
-      console.log('entro');
       const sortedCredits = credits.cast.sort((b, a) => (a.release_date > b.release_date ? 1: a.release_date < b.release_date ? -1 : 0 ))
       setSorted(sortedCredits)
     }
@@ -25,8 +24,6 @@ const Filmography = ({credits}) => {
              {credit.title}
              </Link>
                {` as ${credit.character}`}
-
-               {/* {`${credit.release_date} - ${<Link to={`/movie/${credit.id}`}> {credit.title} </Link>} as ${credit.character}`} */}
 
              </li>
            </ul>

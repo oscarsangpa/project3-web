@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BASE_IMG, httpGet } from "../../../services/TMDBService";
-import TvInformation from "../../../components/DetailComponentes/ComponentsTv/TvInformation";
-import TvCast from "../../../components/DetailComponentes/ComponentsTv/TvCast";
+import TvInformation from "../../../components/DetailComponentes/Tv/TvInformation";
+import TvCast from "../../../components/DetailComponentes/Tv/TvCast";
+import Cast from "../../../components/Cast/Cast";
 
 export default function SerieDetail() {
 
@@ -39,7 +40,7 @@ export default function SerieDetail() {
     return (
       <>
         <TvInformation tvInfo={detailTv}/>
-        <TvCast tvInfo={creditChar}/>
+        <Cast cast={creditChar}/>
       </>
       
       // <div>

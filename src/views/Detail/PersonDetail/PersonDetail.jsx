@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { /*Link,*/ useParams } from "react-router-dom";
 import { httpGet, /*BASE_IMG*/ } from "../../../services/TMDBService";
 import "../../../components/PopularSearched/PopularPersonSearched.css"
-import PersonInformation from "../../../components/DetailComponentes/ComponentsPerson/PersonInformation";
-import KnownFor from "../../../components/DetailComponentes/ComponentsPerson/KnownFor";
-import Filmography from "../../../components/DetailComponentes/ComponentsPerson/Filmography";
+import PersonInformation from "../../../components/DetailComponentes/Person/PersonInformation";
+import KnownFor from "../../../components/DetailComponentes/Person/KnownFor";
+import Filmography from "../../../components/DetailComponentes/Person/Filmography";
 
 export default function PersonDetail() {
   const [detailPerson, setDetailPerson] = useState([]);
@@ -18,9 +18,13 @@ export default function PersonDetail() {
         .catch(error => console.log(error))
   
       httpGet(`/person/${personId}/combined_credits`)
-        .then(credit => setCreditPerson(credit))
+        .then((credit) => {
+          setCreditPerson(credit)
+          console.log("cast", credit)  
+        }) 
         .catch(error => console.log(error))
     }
+
       
   },[personId])
 

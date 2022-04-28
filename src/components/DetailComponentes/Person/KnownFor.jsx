@@ -8,7 +8,7 @@ export default function KnownFor({creditCast}) {
             <h3>- Known For:</h3>
             <div className="containerMostSearched">
         {
-          creditCast?.cast.map(person => {
+          creditCast?.cast?.map(person => {
             return (
               <div key={person.id} className="itemMostSearched">
               <Link to={`/movie/${person.id}`}>

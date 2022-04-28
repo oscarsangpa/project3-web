@@ -1,14 +1,12 @@
 import { BASE_IMG } from "../../../services/TMDBService";
 
-const MovieInformation = (detailMovie) => {
+const MovieInformation = ({movieInfo}) => {
     return ( 
         <div>
-            <h3>- Página MovieDetail -</h3>
-
-            <p>{detailMovie.original_title}</p>
-            <img src={`${BASE_IMG}${detailMovie.poster_path}`} alt={""}/>
-            <p>{detailMovie.release_date}</p>
-            {detailMovie?.production_companies?.map(production => {
+            <h2>{movieInfo.original_title}</h2>
+            <img src={`${BASE_IMG}${movieInfo.poster_path}`} alt={""}/>
+            <p>{movieInfo.release_date}</p>
+            {movieInfo?.production_companies?.map(production => {
                 return (
                 <>
                     <ul>
@@ -18,9 +16,9 @@ const MovieInformation = (detailMovie) => {
                 )
             })}
             
-            <p>- Genres -</p>
+            <h4>- Genres -</h4>
 
-            {detailMovie?.genres?.map(genres => {
+            {movieInfo?.genres?.map(genres => {
                 return (
                 <>
                     <ul>
@@ -30,9 +28,9 @@ const MovieInformation = (detailMovie) => {
                 )
             })}
 
-            <p>- Overviews -</p>
+            <h4>- Overviews -</h4>
             
-            <p>{detailMovie.overview}</p>
+            <p>{movieInfo.overview}</p>
         </div>
     );
 }
