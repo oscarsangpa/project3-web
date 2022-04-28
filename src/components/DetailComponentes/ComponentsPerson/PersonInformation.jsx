@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { httpGet, BASE_IMG } from "../../../services/TMDBService";
+// import { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+import { /*httpGet,*/ BASE_IMG } from "../../../services/TMDBService";
 
 export default function PersonInformation({personInfo}) {
 
