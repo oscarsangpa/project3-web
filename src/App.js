@@ -1,3 +1,4 @@
+import "./style/Style.css";
 import MainRouter from "./router/MainRouter";
 import {AuthContextProvider} from "./contexts/AuthContext";
 import {

@@ -1,40 +1,33 @@
+import "../../style/Style.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import SearchBar from "../SearchBar/SearchBar";
 
-// import Link frm "react-router-dom";
-const Navbar = () => {
-  const [authBtn, setAuthBtn] = useState(false);
-  const [showSearchBar, setShowSearchBar] = useState(false)
 
-  // const showBtn = () => {
-  //   setAuthBtn(!authBtn)
-  // }
+const Navbar = () => {
+  const [showSearchBar, setShowSearchBar] = useState(false)
 
   const showBar = () => {
     setShowSearchBar(!showSearchBar)
-    console.log("funcionaaaaaaaaaaaaaaaaaaaaa")
   }
 
   return ( 
     <>
-      <Link to={'/'}>WHO IS</Link>
-      <ul>
-          {/*METER AUTENTIFICACIÓN PARA REDIRIGIR A LOGIN O PROFILE */}
-          {/* <Link to={"/profile"}>
-          <button onClick={showBtn}>Profile</button> 
-          </Link> */}
-          <AuthButtons/>
-          
-          <button onClick={() => showBar()}>Search</button>
-
-          {showSearchBar &&
-            <SearchBar/>
-          }
-
-          <button>{/*ICONO DE MODO NOCHE*/}</button>
-      </ul>
+      <div className="Nav">
+        <Link to={'/'}>WHO IS</Link>
+        <ul className="buttonsNav">
+            <li><AuthButtons /></li>
+            <li><button>{/*ICONO DE MODO NOCHE*/}</button></li>
+            <li>
+              <button onClick={() => showBar()}>Search</button>
+              <div className="searchBarNav">
+                {showSearchBar && <SearchBar/>}
+              </div>
+                
+            </li>
+        </ul>
+      </div>
     </>
    );
 }
