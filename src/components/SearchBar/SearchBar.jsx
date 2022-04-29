@@ -1,16 +1,12 @@
-import { Link, useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { httpGet, BASE_IMG } from "../../services/TMDBService";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { httpGet } from "../../services/TMDBService";
 import SearchPag from "../../views/Search/Search";
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");
   const [searched, setSearched] = useState([]);
   const [query, setQuery] = useSearchParams({});
-
-  // const history = useHistory()
-  // const navigate = useNavigate();
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,38 +19,32 @@ const SearchBar = () => {
 
   useEffect(()=> {
     if(query.get('search')) {
-      // setLoading(true)
       httpGet("/search/multi/?query=" + query.get('search'))
         .then((data) => {
           setSearched(data.results);
-            // setLoading(false)
         })
     }
   }, [query])
 
-
-
   return (
-    <>
-      <div>
-        <h4>
-          <form onSubmit={handleSubmit}>
-            <input type="text"
-              value={inputSearch}
-              onChange={handleChange}
-            />
-            <button type="submit"> search </button>
-          </form>
-        </h4>
-          {/* <SearchPag searched={searched} /> */}
-          {}
-        {
-          searched?.map((({name, id, title, profile_path, poster_path}) => {
-            return (
-              <>
+    <div>
+      <div className="SearchBar">
+        <form onSubmit={handleSubmit}>
+          <input 
+            type="text"
+            value={inputSearch}
+            onChange={handleChange}
+          />
+          <button type="submit"> search </button>
+        </form>
+      </div>
+      {
+        searched?.map((({name, id, title, profile_path, poster_path}) => {
+          return (
+            <>
               <SearchPag searched={searched}/>
-              {/* <p>{name}</p> */}
-                <div>
+              <p key={id}>{name}</p>
+              <div>
                   {/* { profile_path &&
                     (<Link to={`/person/${id}`}>
                       <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
@@ -65,19 +55,16 @@ const SearchBar = () => {
                     </Link>)
                   } */}
                   {/* : */}
-                    {/* (<Link to={`/tv/${id}`}>
+                  {/* (<Link to={`/tv/${id}`}>
                       <img src={`${BASE_IMG}${poster_path}`} alt=""/>
                     </Link>)                                       */}
-                  <p key={id}>{name}</p>
-                </div>
-              </>
-            )
-          }))
-        }
-      </div>
-    </>
+              </div>
+            </>
+          )
+        }))
+      }
+    </div>
   )
-
 }
  
 export default SearchBar;
