@@ -1,6 +1,8 @@
 // import "../../style/Style.css";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { logout } from "../../store/AccessTokenStore";
+
 
 const AuthButtons = () => {
   const {user} = useAuthContext()
@@ -11,9 +13,12 @@ const AuthButtons = () => {
         {
           user ?
           ( 
+            <>
             <Link to={"/profile"}>
               <button>Profile</button>
-            </Link> 
+            </Link>
+              <button onClick={logout}>logout</button> 
+            </>
           )
           :   
           (

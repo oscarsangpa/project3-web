@@ -11,7 +11,7 @@ export default function KnownFor({creditCast}) {
           creditCast?.cast?.map(person => {
             return (
               <div key={person.id} className="itemMostSearched">
-              <Link to={`/movie/${person.id}`}>
+              <Link to={ person.media_type === "movie" ? `/movie/${person.id}` : `/tv/${person.id}` }>
               {person.poster_path && <img src={`${BASE_IMG}${person.poster_path}`} alt={person.original_title}/>}
               <h5>{person.original_title}</h5>
               </Link>

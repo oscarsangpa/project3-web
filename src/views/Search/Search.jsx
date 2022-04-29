@@ -3,113 +3,75 @@ import { Link } from "react-router-dom";
 import Filter from "../../components/Filter/Filter";
 import { BASE_IMG } from "../../services/TMDBService";
 
-const SearchPag = ({searched}) => {
+const SearchPag = ({ searched }) => {
   const [listToShow, setListToShow] = useState("");
 
+  const filterMovie = searched.filter(
+    (search) => search.media_type === "movie"
+  );
+  const filterTv = searched.filter((search) => search.media_type === "tv");
+  const filterPerson = searched.filter(
+    (search) => search.media_type === "person"
+  );
 
+  return (
+    <>
+      <p onClick={() => setListToShow("movie")}>Movies: {filterMovie.length}</p>
 
+      <p onClick={() => setListToShow("tv")}>TvShows: {filterTv.length}</p>
 
+      <p onClick={() => setListToShow("person")}>
+        Persons: {filterPerson.length}
+      </p>
 
+      {listToShow === "movie" && <Filter list={filterMovie} />}
 
-  const filterMovie = searched.filter(search => search.media_type === "movie")
-  const filterTv = searched.filter(search => search.media_type === "tv")
-  const filterPerson = searched.filter(search => search.media_type === "person")
-  // console.log(filterMovie)
+      {listToShow === "tv" && (
+        <div>
+          <Filter list={filterTv} />
+        </div>
+      )}
 
-    // let type = "";
-    // let typeImg = "";
+      {listToShow === "person" && (
+        <div>
+          <Filter list={filterPerson} />
+        </div>
+      )}
 
-    //     if (searched.media_type === "person") {
-    //         type = "person"
-    //         typeImg = searched.profile_path
-    //     }
-    //     if (searched.media_type === "movie") {
-    //         type = "movie"
-    //         typeImg = searched.poster_path
-    //     }
-    //     if (searched.media_type === "tv") {
-    //         type = "tv"
-    //         typeImg = searched.poster_path
-    //     }
-
-    return ( 
-        <>
-            <p onClick={() => setListToShow("movie")}> 
-            Movies: {filterMovie.length} 
-            </p>
-
-            <p onClick={() => setListToShow("tv")}>
-            TvShows: {filterTv.length} 
-            </p>
-
-            <p onClick={() => setListToShow("person")}>
-            Persons: {filterPerson.length}
-            </p>
-
-            {listToShow=== "movie" &&  
-              <Filter list={filterMovie} />
-            }
-
-            {listToShow=== "tv" &&
-              <div>
-              <Filter list={filterTv} />
-              </div>
-            }
-
-            {listToShow=== "person" &&
-              <div>
-              <Filter list={filterPerson} />
-              </div>
-           
-            }
-
-        {
-          searched?.map((({name, id, title, profile_path, poster_path}) => {
-            return (
-              <>
+      {searched?.map(
+        ({ name, id, title, profile_path, poster_path, media_type }) => {
+          return (
+            <>
               <div key={id}>
-                <Link to={`/person/${id}`}>
-                    <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
-                    <p key={id}>{name}</p>
+                <Link
+                  to={
+                    media_type === "person"
+                      ? `/person/${id}`
+                      : media_type === "movie"
+                      ? `/movie/${id}`
+                      : media_type === "tv" && `/tv/${id}`
+                  }
+                >
+                  <img
+                    src={
+                      media_type === "person"
+                        ? `${BASE_IMG}${profile_path}`
+                        : `${BASE_IMG}${poster_path}`
+                    }
+                    alt={name || title}
+                  />
+                  <p>{name || title}</p>
                 </Link>
               </div>
-
-                {/* <div>
-                  { profile_path &&
-                    (<Link to={`/${type}/${id}`}>
-                      <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
-                        <p key={id}>{name}</p>
-                    </Link>)  
-                  }
-
-                  { title ? (<Link to={`/${type}/${id}`}>
-                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
-                    </Link>)
-                  :
-                  (<Link to={`/${type}/${id}`}>
-                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
-                    </Link>)                                      
-                  }
-                        <p key={id}>{title}</p>
-
-                </div> */}
-              </>
-            )
-          }))
+            </>
+          );
         }
-        </>
-     );
-}
- 
+      )}
+    </>
+  );
+};
+
 export default SearchPag;
-
-
-
-
-
-
-
-
 
 // import { useEffect, useState } from "react";
 // import { get } from "./../../utils/httpClient"; /*TUTORIAL*/
@@ -120,7 +82,6 @@ export default SearchPag;
 // // import { Empty } from "./../../components/empty/Empty";/*TUTORIAL*/
 // import React from "react";
 // import { useGetSearchResult } from "../../services/useGetSearchResult";
-
 
 // export default function Search({search})
 

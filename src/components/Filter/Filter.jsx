@@ -7,7 +7,7 @@ const Filter = (props) => {
         return (
           <>
             <p>{el.name || el.title}</p>
-            <img src={`${BASE_IMG}${el.profile_path || el.poster_path}`} alt={""} />
+            <img src={`${BASE_IMG}${el.profile_path || el.poster_path}`} alt={el.name || el.title} />
           </>
         );
       })

@@ -21,8 +21,9 @@ const Cast = (props) => {
               </Link>
               <p>{credit.character}</p>
             </div>
-          )
-        })};
+          );
+        })}
+        ;
       </div>
     </>
   );

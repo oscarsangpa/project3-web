@@ -1,50 +1,60 @@
 import { BASE_IMG } from "../../services/TMDBService";
 
 const Information = (props) => {
-  return ( 
+  const {
+    id,
+    original_name,
+    original_title,
+    overview,
+    poster_path,
+    release_date,
+    first_air_date,
+    production_companies,
+    genres,
+  } = props.info;
+  return (
     <>
       <div>
-
-      <h2>{props.info.original_title || props.info.original_name} </h2>
-          <img src={`${BASE_IMG}${props.info.poster_path}`} alt={""}/>
+        <h2 key={id}>{original_title || original_name} </h2>
+        <img
+          src={poster_path && `${BASE_IMG}${poster_path}`}
+          alt={original_title || original_name}
+        />
         <p>
-        <strong>Release date: </strong>
-        {props.info?.release_date || props.info?.first_air_date}
+          <strong>Release date: </strong>
+          {release_date || first_air_date}
         </p>
 
-          <h4> - Companies - </h4>
+        <h4> - Companies - </h4>
 
-        {props.info?.production_companies?.map(production => {
-            return (
-              <>
-                <ul>
-                  <li>{production.name}</li>
-                </ul>
-              </>
-            )
-          })
-        }
+        {production_companies?.map((production, index) => {
+          return (
+            <>
+              <ul key={index}>
+                <li>{production.name}</li>
+              </ul>
+            </>
+          );
+        })}
 
         <h4>- Genres -</h4>
 
-        {props.info?.genres?.map(genres => {
-            return (
-              <>
-               <ul>
-                  <li>{genres.name}</li>
-                </ul>
-              </>
-            )
-          })
-        }
+        {genres?.map((genres, index) => {
+          return (
+            <>
+              <ul key={index}>
+                <li>{genres.name}</li>
+              </ul>
+            </>
+          );
+        })}
         <p>
-        <strong>Synopsis: </strong>
-        {props.info.overview}
+          <strong>Synopsis: </strong>
+          {overview}
         </p>
       </div>
-            
     </>
-   );
-}
- 
+  );
+};
+
 export default Information;

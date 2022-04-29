@@ -19,9 +19,9 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthContextProvider>
-          <header>
+          
             <Navbar />
-          </header>
+          
           <main>
             <MainRouter />
           </main>
