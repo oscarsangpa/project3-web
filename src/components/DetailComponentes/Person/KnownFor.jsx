@@ -1,25 +1,32 @@
 import { Link } from "react-router-dom";
 import { BASE_IMG } from "../../../services/TMDBService";
+import imgNotFound from "../../../images/not-img.png";
 
-export default function KnownFor({creditCast}) {
-    
-    return (
-        <>
-            <h3>- Known For:</h3>
-            <div className="containerMostSearched">
-        {
-          creditCast?.cast?.map(person => {
+export default function KnownFor({ creditCast }) {
+  return (
+    <>
+      <h3>- Known For -</h3>
+      <div className="containerMostSearched">
+        {creditCast?.cast?.map(
+          ({ id, media_type, poster_path, original_title, original_name }) => {
             return (
-              <div key={person.id} className="itemMostSearched">
-              <Link to={ person.media_type === "movie" ? `/movie/${person.id}` : `/tv/${person.id}` }>
-              {person.poster_path && <img src={`${BASE_IMG}${person.poster_path}`} alt={person.original_title}/>}
-              <h5>{person.original_title}</h5>
-              </Link>
+              <div key={id} className="itemMostSearched">
+                <Link
+                  to={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`}
+                >
+                  {poster_path && (
+                    <img
+                      src={poster_path === null ? `${imgNotFound}` : `${BASE_IMG}${poster_path}`}
+                      alt={original_title || original_name}
+                    />
+                  )}
+                  <h5>{original_title || original_name}</h5>
+                </Link>
               </div>
-            )
-          })
-        }
-        </div>
-        </>
-    )
+            );
+          }
+        )}
+      </div>
+    </>
+  );
 }
