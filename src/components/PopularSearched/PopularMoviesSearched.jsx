@@ -17,7 +17,6 @@ const PopularMoviesSearched = () => {
   }, [])
   return ( 
     <>
-        
         <div className="containerMostSearched">
           {movies.map(popMovie => {
             return (

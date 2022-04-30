@@ -1,37 +1,38 @@
-import { motion } from "framer-motion";
 import { BASE_IMG } from "../../services/TMDBService";
+import { Link } from "react-router-dom";
 
 const SearchPopular = (props) => {
-  return ( 
+  return (
     <>
-      <motion.div className='slider-container'>
-        <motion.div className='slider' drag='x' 
-        dragConstraints={{right: 0, left:-764}} >
-        {props.search.map((search) => {
-      return (
-      <motion.div key={search.id} className="item">
-      {
-        (props.name) 
-        ?
-        <div>
-      (<img src={`${BASE_IMG}${search.profile_path}`} alt={search.name}/>
-      <h5>{search.name}</h5>)
-        </div>
-      :
-      <div>
-      (<img src={`${BASE_IMG}${search.poster_path}`} alt={search.title}/>
-      <h5>{search.title}</h5>)
+      <div className="containerMostSearched">
+        {props.popular?.map((el) => {
+          return (
+            <div key={el.id} className="itemMostSearched">
+              <Link
+                to={
+                  el.profile_path
+                    ? `/person/${el.id}`
+                    : el.title
+                    ? `/movie/${el.id}`
+                    : el.name && `/tv/${el.id}`
+                }
+              >
+                <img
+                  src={
+                    el.poster_path
+                      ? `${BASE_IMG}${el.poster_path}`
+                      : `${BASE_IMG}${el.profile_path}`
+                  }
+                  alt={el.title}
+                />
+                <h5>{el.title || el.name}</h5>
+              </Link>
+            </div>
+          );
+        })}
       </div>
-
-      }
-      </motion.div>
-      )
-    })}
-        </motion.div>
-        
-    </motion.div>
     </>
-   );
-}
- 
+  );
+};
+
 export default SearchPopular;

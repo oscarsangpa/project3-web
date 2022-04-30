@@ -7,7 +7,7 @@ import KnownFor from "../../../components/DetailComponentes/Person/KnownFor";
 import Filmography from "../../../components/DetailComponentes/Person/Filmography";
 import Review from "../../../components/Review/Review";
 
-export default function PersonDetail() {
+export default function PersonDetail({popular}) {
   const [detailPerson, setDetailPerson] = useState([]);
   const [creditPerson, setCreditPerson] = useState();
   const { personId } = useParams();
