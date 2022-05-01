@@ -9,40 +9,38 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
 
+  const getPerson = () => {
+    if (people) {
+      httpGet("/person/popular")
+        .then((person) => {
+          setPeople(person.results);
+          // console.log("person", person)
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
-    const getPerson = () => {
-      if (people) {
-        httpGet("/person/popular")
-          .then((person) => {
-            setPeople(person.results)
-            // console.log("person", person)
-          }) 
-          .catch(err => console.log(err)) 
-      }
-    } 
-
-    const getMovies = () => {
-      movies &&
+  const getMovies = () => {
+    movies &&
       httpGet("/movie/popular")
-      .then((movie) => {
-        setMovies(movie.results)
-        // console.log("mov", movie)
-      })
-      .catch(err => console.log(err))
-    } 
+        .then((movie) => {
+          setMovies(movie.results);
+          // console.log("mov", movie)
+        })
+        .catch((err) => console.log(err));
+  };
 
-    const getTvShows = () => {
-      tvShows &&
+  const getTvShows = () => {
+    tvShows &&
       httpGet("/tv/popular")
-      .then(tv => {
-        setTvShows(tv.results)
-        // console.log("tv", tv)
-      })
-      .catch(err => console.log(err))
-    } 
+        .then((tv) => {
+          setTvShows(tv.results);
+          // console.log("tv", tv)
+        })
+        .catch((err) => console.log(err));
+  };
 
-
-    /* intentado hacer las 3 peticiones en una usando Promisse.all. No funciona */
+  /* intentado hacer las 3 peticiones en una usando Promisse.all. No funciona */
 
   //   if(getPerson && getMovies && getTvShows) {
   //     Promise.all([getPerson, getMovies, getTvShows
@@ -58,28 +56,24 @@ const Home = () => {
   //   }
   // }
 
+  useEffect(() => {
+    getPerson();
+    getMovies();
+    getTvShows();
+  }, []);
 
-    useEffect(()=> {
-      getPerson()
-      getMovies()
-      getTvShows()
-    },[])
-
-  return ( 
+  return (
     <>
-      <SearchBar/>
-      <br/>
+      <SearchBar />
+      <br />
       <h2> - People most searched - </h2>
-        <PopularSearched popular={people}/>
+      <PopularSearched popular={people} />
       <h2> - Movies most searched - </h2>
-        <PopularSearched popular={movies}/>
+      <PopularSearched popular={movies} />
       <h2> - TV Shows most searched - </h2>
-        <PopularSearched popular={tvShows}/>
-      {/* <PopularPersonSearched/>
-      <PopularMoviesSearched/>
-      <PopularTVShowsSearched/>*/}
-    </> 
-   );
-}
- 
+      <PopularSearched popular={tvShows} />
+    </>
+  );
+};
+
 export default Home;

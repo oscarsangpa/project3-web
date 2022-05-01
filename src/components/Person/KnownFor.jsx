@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { BASE_IMG } from "../../../services/TMDBService";
-import imgNotFound from "../../../images/not-img.png";
+import { BASE_IMG } from "../../services/TMDBService";
+import imgNotFound from "../../images/not-img.png";
 
 export default function KnownFor({ creditCast }) {
   return (
