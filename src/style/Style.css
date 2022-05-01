@@ -35,3 +35,7 @@ body {
 .SearchBar {
     padding: 70px 0 0 0;
 }
+
+.style {
+    background-color: rgb(9, 63, 19);
+}

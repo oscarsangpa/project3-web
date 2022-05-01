@@ -1,11 +1,19 @@
 // import "../../style/Style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { logout } from "../../store/AccessTokenStore";
 
 
 const AuthButtons = () => {
+  const navigate = useNavigate
   const {user} = useAuthContext()
+
+  const onSubmit = () => {
+    logout()
+    console.log("SALIENDO")
+    navigate("/")
+
+  }
 
   return ( 
     <>
@@ -17,7 +25,7 @@ const AuthButtons = () => {
             <Link to={"/profile"}>
               <button>Profile</button>
             </Link>
-              <button onClick={logout}>logout</button> 
+              <button onClick={onSubmit}>logout</button> 
             </>
           )
           :   

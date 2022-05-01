@@ -22,7 +22,9 @@ const Navbar = () => {
             <li>
               <button onClick={() => showBar()}>Search</button>
               <div className="searchBarNav">
-                {showSearchBar && <SearchBar/>}
+                {showSearchBar && 
+
+                (<SearchBar className="style"/>)}
               </div>
                 
             </li>

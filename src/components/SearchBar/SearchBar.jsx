@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { httpGet } from "../../services/TMDBService";
 import SearchPag from "../../views/Search/Search";
+import "../../style/Style.css"
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");
@@ -41,9 +42,9 @@ const SearchBar = () => {
       {
         searched?.map((({name, id, title, profile_path, poster_path}) => {
           return (
-            <>
+            <div className="style">
               <SearchPag searched={searched}/>
-            </>
+            </div>
           )
         }))
       }

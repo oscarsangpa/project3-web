@@ -4,6 +4,7 @@ import { httpGet } from "../../../services/TMDBService";
 import Cast from "../../../components/Cast/Cast";
 import Information from "../../../components/Information/Information";
 import Review from "../../../components/Review/Review";
+import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
 
 export default function MovieDetail() {
   const [detailMovie, setDetailMovie] = useState([]);
@@ -28,6 +29,7 @@ export default function MovieDetail() {
   return (
     <>
       <Information info={detailMovie} />
+      <FavouritesSearches saveSearch={detailMovie}/>
       <Cast cast={creditChar} />
 
       <Review/>

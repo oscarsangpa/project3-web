@@ -19,9 +19,10 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthContextProvider>
-          <Navbar />
+
 
           <main>
+          <Navbar />
             <MainRouter />
           </main>
         </AuthContextProvider>

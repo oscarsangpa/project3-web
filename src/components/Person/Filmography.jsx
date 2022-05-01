@@ -21,12 +21,14 @@ const Filmography = ({ credits }) => {
   // useEffect(()=> {
   //   if (credits) {
   //     const onlyYear = credits.cast.map((y) => {
-  //       const theYear = y.release_date.split(" , ")
-  //       console.log(theYear)
+  //       const theYear = y.release_date.slice(0,4)
+  //       // console.log(theYear)
+  //       setYear(theYear)
   //     })
+  //     console.log(year)
   //   }
 
-  // })
+  // },[])
 
   return (
     <>
@@ -37,7 +39,8 @@ const Filmography = ({ credits }) => {
             <li>
               {credit.release_date === undefined || ""
                 ? ` ____ - `
-                : `${credit.release_date || credit.first_air_date} - In `}
+                : `${credit.release_date.slice(0,4)} - In ` || `${credit.first_air_date} - In `}
+
               <Link
                 to={
                   credit.media_type === "movie"
