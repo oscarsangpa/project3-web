@@ -1,11 +1,8 @@
 import "../../style/Style.css";
-import PopularMoviesSearched from "../../components/PopularSearched/PopularMoviesSearched";
-import PopularPersonSearched from "../../components/PopularSearched/PopularPersonSearched";
-import PopularTVShowsSearched from "../../components/PopularSearched/PopularTVShowsSearched";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useEffect, useState } from "react";
 import { httpGet } from "../../services/TMDBService";
-import SearchPopular from "../../components/SearchPopular/Searched";
+import PopularSearched from "../../components/PopularSearched/PopularSearched";
 
 const Home = () => {
   const [people, setPeople] = useState([]);
@@ -44,6 +41,9 @@ const Home = () => {
       .catch(err => console.log(err))
     } 
 
+
+    /* intentado hacer las 3 peticiones en una usando Promisse.all. No funciona */
+
   //   if(getPerson && getMovies && getTvShows) {
   //     Promise.all([getPerson, getMovies, getTvShows
   //     ]).then((person, movie, tvShow) => {
@@ -70,11 +70,11 @@ const Home = () => {
       <SearchBar/>
       <br/>
       <h2> - People most searched - </h2>
-        <SearchPopular popular={people}/>
+        <PopularSearched popular={people}/>
       <h2> - Movies most searched - </h2>
-        <SearchPopular popular={movies}/>
+        <PopularSearched popular={movies}/>
       <h2> - TV Shows most searched - </h2>
-        <SearchPopular popular={tvShows}/>
+        <PopularSearched popular={tvShows}/>
       {/* <PopularPersonSearched/>
       <PopularMoviesSearched/>
       <PopularTVShowsSearched/>*/}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { httpGet } from "../../../services/TMDBService";
-import "../../../components/PopularSearched/PopularPersonSearched.css";
 import PersonInformation from "../../../components/DetailComponentes/Person/PersonInformation";
 import KnownFor from "../../../components/DetailComponentes/Person/KnownFor";
 import Filmography from "../../../components/DetailComponentes/Person/Filmography";
 import Review from "../../../components/Review/Review";
+import "../../../components/PopularSearched/PopularSearched.css";
 
 export default function PersonDetail({popular}) {
   const [detailPerson, setDetailPerson] = useState([]);

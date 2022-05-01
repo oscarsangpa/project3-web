@@ -1,7 +1,7 @@
 import { BASE_IMG } from "../../services/TMDBService";
 import { Link } from "react-router-dom";
 
-const SearchPopular = (props) => {
+const PopularSearched = (props) => {
   return (
     <>
       <div className="containerMostSearched">
@@ -35,4 +35,4 @@ const SearchPopular = (props) => {
   );
 };
 
-export default SearchPopular;
+export default PopularSearched;
