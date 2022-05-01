@@ -1,0 +1,20 @@
+.infoContainer {
+  display: flex;
+  margin-bottom: 3em;
+}
+.infoContainer li {
+  list-style: none;
+}
+
+.infoItems {
+  justify-items: center;
+}
+
+.imgProfile {
+  width: 30%;
+  margin-left: 2em;
+}
+
+.biography {
+  margin-left: 2em;
+}

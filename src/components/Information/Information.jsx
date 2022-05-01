@@ -1,5 +1,6 @@
 import { BASE_IMG } from "../../services/TMDBService";
 import imgNotFound from "../../images/not-img.png";
+import styles from "../Person/person.module.css"
 
 const Information = (props) => {
   const {
@@ -17,7 +18,7 @@ const Information = (props) => {
     <>
       <div>
         <h2 key={id}>{original_title || original_name} </h2>
-        <img
+        <img className={styles.imgProfile}
           src={!poster_path ? `${imgNotFound}` : `${BASE_IMG}${poster_path}`}
           alt={original_title || original_name}
         />

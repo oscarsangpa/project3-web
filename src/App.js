@@ -1,6 +1,6 @@
 import "./style/Style.css";
 import MainRouter from "./router/MainRouter";
-import {AuthContextProvider} from "./contexts/AuthContext";
+import { AuthContextProvider } from "./contexts/AuthContext";
 import {
   useQuery,
   useMutation,
@@ -19,9 +19,8 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthContextProvider>
-          
-            <Navbar />
-          
+          <Navbar />
+
           <main>
             <MainRouter />
           </main>

@@ -15,7 +15,7 @@ const Navbar = () => {
   return ( 
     <>
       <div className="Nav">
-        <Link to={'/'}>WHO IS</Link>
+        <Link to={'/'}>KnownFor</Link>
         <ul className="buttonsNav">
             <li><AuthButtons /></li>
             <li><button>{/*ICONO DE MODO NOCHE*/}</button></li>

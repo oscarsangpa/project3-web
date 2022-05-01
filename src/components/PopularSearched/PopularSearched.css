@@ -24,3 +24,7 @@ img::hover {
   opacity: 0.2;
 }
 
+h2 {
+  text-decoration: underline;
+}
+

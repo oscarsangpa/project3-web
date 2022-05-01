@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Filter from "../../components/Filter/Filter";
 import { BASE_IMG } from "../../services/TMDBService";
+import styles from "./search.module.css";
 
 const SearchPag = ({ searched }) => {
   const [listToShow, setListToShow] = useState("");
@@ -16,27 +17,36 @@ const SearchPag = ({ searched }) => {
 
   return (
     <>
-      <p onClick={() => setListToShow("movie")}>Movies: {filterMovie.length}</p>
+      <div className={styles.list}>
+        <p onClick={() => setListToShow("all")}>All ({searched.length}):</p>
+        <p onClick={() => setListToShow("movie")}>
+          Movies ({filterMovie.length}):
+        </p>
 
-      <p onClick={() => setListToShow("tv")}>TvShows: {filterTv.length}</p>
+        <p onClick={() => setListToShow("tv")}>TvShows ({filterTv.length}):</p>
 
-      <p onClick={() => setListToShow("person")}>
-        Persons: {filterPerson.length}
-      </p>
+        <p onClick={() => setListToShow("person")}>
+          People ({filterPerson.length}):
+        </p>
+      </div>
 
-      {listToShow === "movie" && <Filter list={filterMovie} />}
+      <div>
+        {listToShow === "movie" && <Filter list={filterMovie} />}
 
-      {listToShow === "tv" && (
-        <div>
-          <Filter list={filterTv} />
-        </div>
-      )}
+        {listToShow === "tv" && (
+          <div>
+            <Filter list={filterTv} />
+          </div>
+        )}
 
-      {listToShow === "person" && (
-        <div>
-          <Filter list={filterPerson} />
-        </div>
-      )}
+        {listToShow === "person" && (
+          <div>
+            <Filter list={filterPerson} />
+          </div>
+        )}
+
+        {listToShow === "all" && <Filter list={searched} />}
+      </div>
 
       {searched?.map(
         ({ name, id, title, profile_path, poster_path, media_type }) => {

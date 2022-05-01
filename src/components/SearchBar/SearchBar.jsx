@@ -35,7 +35,7 @@ const SearchBar = () => {
             value={inputSearch}
             onChange={handleChange}
           />
-          <button type="submit"> search </button>
+          <button type="submit"> Search </button>
         </form>
       </div>
       {
@@ -43,22 +43,6 @@ const SearchBar = () => {
           return (
             <>
               <SearchPag searched={searched}/>
-              <p key={id}>{name}</p>
-              <div>
-                  {/* { profile_path &&
-                    (<Link to={`/person/${id}`}>
-                      <img src={`${BASE_IMG}${profile_path}`} alt=""/> 
-                    </Link>)  
-                  }
-                  { title && (<Link to={`/movie/${id}` || `/tv/${id}`}>
-                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
-                    </Link>)
-                  } */}
-                  {/* : */}
-                  {/* (<Link to={`/tv/${id}`}>
-                      <img src={`${BASE_IMG}${poster_path}`} alt=""/>
-                    </Link>)                                       */}
-              </div>
             </>
           )
         }))

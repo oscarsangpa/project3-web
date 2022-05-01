@@ -5,7 +5,7 @@ import imgNotFound from "../../images/not-img.png";
 export default function KnownFor({ creditCast }) {
   return (
     <>
-      <h3>- Known For -</h3>
+      <h3> Known For...</h3>
       <div className="containerMostSearched">
         {creditCast?.cast?.map(
           ({ id, media_type, poster_path, original_title, original_name }) => {

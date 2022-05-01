@@ -5,6 +5,7 @@ import InputGroup from "../../components/InputGroup/InputGroup";
 import { useState } from "react";
 import { login as loginRequest } from "../../services/AuthService";
 import { useAuthContext } from "../../contexts/AuthContext";
+import styles from "./login.module.css"
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -38,7 +39,7 @@ const Login = () => {
       })
   };
   return ( 
-    <div className="Login">
+    <div className={styles.container}>
     <h1 className="mt-3">Login</h1>
 
     <form onSubmit={handleSubmit(onSubmit)}>
