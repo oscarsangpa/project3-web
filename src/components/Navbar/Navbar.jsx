@@ -15,7 +15,7 @@ import {
   MenuDivider,
 } from "@chakra-ui/menu";
 import { logout } from "../../store/AccessTokenStore";
-import logo from "../../images/KnownFor-removebg-preview.png";
+import logo from "../../images/KnownFor-removebg-preview-cortada.png";
 
 const Navbar = () => {
   const { user } = useAuthContext();
