@@ -29,7 +29,7 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div className="SearchBar">
+      {/* <div className="SearchBar">
         <form onSubmit={handleSubmit}>
           <input 
             type="text"
@@ -38,7 +38,19 @@ const SearchBar = () => {
           />
           <button type="submit"> Search </button>
         </form>
-      </div>
+      </div> */}
+      
+      <div className="search-box">
+    {/* <button className="btn-search"><i className="fas fa-search"></i></button> */}
+    <form onSubmit={handleSubmit} >
+    <input type="text" 
+    className="input-search" 
+    placeholder="Type to Search..."
+      value={inputSearch}
+      onChange={handleChange}
+    />
+    </form>
+  </div>
       {
         searched?.map((({name, id, title, profile_path, poster_path}) => {
           return (

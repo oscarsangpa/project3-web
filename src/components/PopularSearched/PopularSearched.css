@@ -2,7 +2,8 @@
 
 * {
   font-family: 'Poppins', sans-serif;
-  background-color: rgb(210, 207, 222);
+  background-color: #1e2040 ;
+  color:#fff
 }
 .containerMostSearched {
   display: flex;
@@ -20,11 +21,6 @@ img {
   border-radius: 10px;
 }
 
-img::hover {
-  opacity: 0.2;
+.Link {
+  text-decoration: none;
 }
-
-h2 {
-  text-decoration: underline;
-}
-

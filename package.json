@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icon": "^2.0.5",
+    "@chakra-ui/menu": "^1.8.11",
     "@hookform/resolvers": "^2.8.8",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",

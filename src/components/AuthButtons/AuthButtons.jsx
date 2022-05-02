@@ -1,4 +1,4 @@
-// import "../../style/Style.css";
+import "../../style/Style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { logout } from "../../store/AccessTokenStore";
@@ -23,7 +23,7 @@ const AuthButtons = () => {
           ( 
             <>
             <Link to={"/profile"}>
-              <button>Profile</button>
+              <button className="button">Profile</button>
             </Link>
               <button onClick={onSubmit}>logout</button> 
             </>
@@ -32,10 +32,10 @@ const AuthButtons = () => {
           (
             <>
               <Link to={"/login"}>
-                <button>Login</button>
+                <button className="button">Login</button>
               </Link>
               <Link to={"/register"}>
-                <button>Register</button>
+                <button className="button">Register</button>
               </Link>
             </>
           )

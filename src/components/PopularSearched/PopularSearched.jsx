@@ -7,8 +7,8 @@ const PopularSearched = (props) => {
       <div className="containerMostSearched">
         {props.popular?.map((el) => {
           return (
-            <div key={el.id} className="itemMostSearched">
-              <Link
+            <div key={el.id} className="itemMostSearched section">
+              <Link className="Link"
                 to={
                   el.profile_path
                     ? `/person/${el.id}`

@@ -64,14 +64,16 @@ const Home = () => {
 
   return (
     <>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-      <SearchBar />
+        {/* <p className="title"> Welcome to the page that helps you find what this actor is known for.</p>
+        
+        <p className="title">You can search for people, movies or TV shows and see where they starred.</p> */}
+      <SearchBar className="title" />
       <br />
-      <h2> - People most searched - </h2>
+      <h2> Most searched people</h2>
       <PopularSearched popular={people} />
-      <h2> - Movies most searched - </h2>
+      <h2>Most searched movies</h2>
       <PopularSearched popular={movies} />
-      <h2> - TV Shows most searched - </h2>
+      <h2>Most searched TV shows</h2>
       <PopularSearched popular={tvShows} />
     </>
   );
