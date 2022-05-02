@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import Filter from "../../components/Filter/Filter";
-import { BASE_IMG } from "../../services/TMDBService";
 import { httpGet } from "../../services/TMDBService";
 import styles from "./search.module.css";
 

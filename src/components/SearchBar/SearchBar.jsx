@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import { httpGet } from "../../services/TMDBService";
-// import SearchPag from "../../views/Search/Search";
-import Search from "../../views/Search/Search";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");
