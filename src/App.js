@@ -12,6 +12,7 @@ import {
 import { BrowserRouter } from "react-router-dom";
 import "./style/ESTYLE.scss"
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ export function App() {
             <main>
               <Navbar />
               <MainRouter />
+              <Footer/>
             </main>
           </AuthContextProvider>
         </ThemeContextProvider>
