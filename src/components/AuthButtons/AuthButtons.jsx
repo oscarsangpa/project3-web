@@ -11,7 +11,7 @@ const AuthButtons = () => {
   const onSubmit = () => {
     logout()
     console.log("SALIENDO")
-    navigate("/")
+    // navigate("/")
 
   }
 

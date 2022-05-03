@@ -1,6 +1,7 @@
 import "./style/Style.css";
 import MainRouter from "./router/MainRouter";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import { ThemeContextProvider } from "./contexts/ThemeContext";
 import {
   useQuery,
   useMutation,
@@ -9,7 +10,7 @@ import {
   QueryClientProvider,
 } from "react-query";
 import { BrowserRouter } from "react-router-dom";
-
+import "./style/ESTYLE.scss"
 import Navbar from "./components/Navbar/Navbar";
 
 const queryClient = new QueryClient();
@@ -18,14 +19,14 @@ export function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <AuthContextProvider>
-
-
-          <main>
-          <Navbar />
-            <MainRouter />
-          </main>
-        </AuthContextProvider>
+        <ThemeContextProvider>
+          <AuthContextProvider>
+            <main>
+              <Navbar />
+              <MainRouter />
+            </main>
+          </AuthContextProvider>
+        </ThemeContextProvider>
       </BrowserRouter>
     </QueryClientProvider>
   );

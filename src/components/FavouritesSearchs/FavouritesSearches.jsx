@@ -7,6 +7,7 @@ const FavouritesSearches = (props) => {
     const saveLocal = searched.push(props)
     localStorage.setItem("mi pelicula", saveLocal)
     console.log("dar favorito")
+    console.log(saveLocal)
   }
 
 

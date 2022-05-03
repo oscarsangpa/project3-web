@@ -1,13 +1,18 @@
-import "../../style/Style.css";
+// import "../../style/Style.css";
+import "../../style/ESTYLE.scss"
 import { Link } from "react-router-dom";
+import { useTheme } from "../../contexts/ThemeContext";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import SearchBar from "../SearchBar/SearchBar";
-import logo from "../../images/KnownFor-removebg-preview-cortada.png";
+import logo from "../../images/logo-KnownFor.png"
 
 const Navbar = () => {
+  const {theme, toggleTheme} = useTheme()
+
   return (
     <>
-      <div className="Nav">
+      <div className={theme}>
+      <div className="Nav nav-color">
         <Link to={"/"}>
           <img className="logo" src={logo} alt={""}/>
         </Link>
@@ -15,13 +20,15 @@ const Navbar = () => {
             <li>
               <SearchBar/>
             </li>
+            
           <li>
             <AuthButtons />
           </li>
           <li>
-            <button>SOL</button>
+            <button onClick={toggleTheme}>{theme}</button>
           </li>
         </ul>
+      </div>
       </div>
     </>
   );

@@ -1,0 +1,37 @@
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Poppins:wght@200&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  // background-color: #1e2040 ;
+  // color:#fff
+}
+
+.light {
+
+  .text {
+    color: black;
+  }
+
+  .background {
+    background-color: $light-background-color;
+  }
+  .nav-color {
+    background-color: $primary-color;
+  }
+
+}
+
+.dark {
+  .text {
+    color: $light-text;
+  }
+
+  .background {
+      background-color: $primary-color;
+  }
+
+  .nav-color {
+    background-color: $light-text;
+  }
+}
