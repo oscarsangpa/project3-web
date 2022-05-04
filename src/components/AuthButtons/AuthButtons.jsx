@@ -25,7 +25,7 @@ const AuthButtons = () => {
             <Link to={"/profile"}>
               <p className="auth-btn">Profile</p>
             </Link>
-              <p onClick={onSubmit}>logout</p> 
+              <button onClick={onSubmit}>logout</button> 
             </>
           )
           :   

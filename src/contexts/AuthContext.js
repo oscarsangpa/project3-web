@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { getCurrentUser, getUser } from '../services/UsersService'
-import { getAccessToken, logout, setAccessToken } from '../store/AccessTokenStore'
+import { getCurrentUser } from '../services/UsersService'
+import { getAccessToken, logout, setAccessToken } from '../store/AccessTokenStore';
 import { isValidJwt } from '../utils/jwt'
 
 const AuthContext = createContext()
@@ -39,7 +39,6 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (!fetchedRef.current) {
-      // console.log('sdjhlasdh')
       // token?
       if (getAccessToken()) {
         console.log(getAccessToken())
@@ -54,7 +53,7 @@ export const AuthContextProvider = ({ children }) => {
       fetchedRef.current = true
     }
   }, [getUser])
-  
+
   const value = {
     user,
     login,
@@ -68,29 +67,3 @@ export const AuthContextProvider = ({ children }) => {
   )
 }
 export default AuthContext
-
-// import { useState, createContext } from "react";
-
-// export const AuthContext = createContext();
-
-// export default function AuthContextProvider({ children }) {
-//   const [user, setUser] = useState(localStorage.getItem("user"));
-
-//   const loginUser = () => {
-//     setUser({ id: "userId" });
-//     //'localStorage' Almacen para guardar los datos del
-//     // usuatrio. Actúa como unas  cookies, pero esa 
-//     //información se guarda en su ordenador, no es 
-//     //nuestro servidor
-//     localStorage.setItem("user", "userId");
-//   };
-//   const logoutUser = () => {
-//     setUser(null);
-//     localStorage.removeItem("user");
-//   };
-//   return (
-//     <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// }

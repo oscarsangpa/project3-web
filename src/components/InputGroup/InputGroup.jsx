@@ -1,3 +1,4 @@
+import '../../style/styles.scss'
 const InputGroup = ({ label, id, name, type, placeholder, register, error }) => {
   return (
     <div className="mb-3">
@@ -11,7 +12,7 @@ const InputGroup = ({ label, id, name, type, placeholder, register, error }) => 
         placeholder={placeholder}
         {...register(id)}
       />
-      <p className="invalid-feedback">{error}</p>
+      <p className="error-form">{error}</p>
     </div>
   )
 }

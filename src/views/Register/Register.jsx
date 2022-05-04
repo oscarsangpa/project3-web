@@ -10,7 +10,7 @@ import { register as registerRequest } from '../../services/AuthService';
 const schema = yup.object({
   name: yup.string().required(),
   email: yup.string().email().required(),
-  password: yup.string().min(8, 'holi').required()
+  password: yup.string().min(8).required()
 }).required();
 
 const Register = () => {

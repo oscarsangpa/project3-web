@@ -10,23 +10,24 @@ import Profile from "../views/Profile/Profile";
 import PersonDetail from "../views/Detail/PersonDetail/PersonDetail"; 
 import MovieDetail from "../views/Detail/MovieDetail/MovieDetail";
 import TvDetail from "../views/Detail/TvDetail/TvDetail";
+import { useAuthContext } from "../contexts/AuthContext";
 
 
 export default function MainRouter() {
+  // const {}
+  const { user} = useAuthContext()
   return (
   <Routes>
     <Route path={ROUTE.HOME} element={<Home />} />
     <Route path={ROUTE.SEARCH} element={<Search />} />
     <Route path={ROUTE.LOGIN} element={<Login />} />
     <Route path={ROUTE.REGISTER} element={<Register />} />
-    <Route
-      path={ROUTE.PROFILE}
-      element={
-        <ProtectedRoute>
-          <Profile />
-        </ProtectedRoute>
-      }
-    />
+
+      <Route path={"/"} element={<ProtectedRoute/>} >
+        <Route path={ROUTE.PROFILE} element={<Profile />} />
+
+      </Route>
+         
     <Route path={ROUTE.DETAIL.PERSON} element={<PersonDetail />} />
     <Route path={ROUTE.DETAIL.MOVIE} element={<MovieDetail />} />
     <Route path={ROUTE.DETAIL.TVSHOW} element={<TvDetail />} />

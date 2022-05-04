@@ -6,6 +6,7 @@ const Profile = () => {
   return ( 
     <>
       <h4>Profile</h4>
+      <img src={user.image} alt={" "} />
       {user && JSON.stringify(user)}
     </>
    );
