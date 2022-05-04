@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { getCurrentUser } from '../services/UsersService'
-import { getAccessToken, logout, setAccessToken } from '../store/AccessTokenStore';
+import { getAccessToken, logout as deleteToken, setAccessToken } from '../store/AccessTokenStore';
 import { isValidJwt } from '../utils/jwt'
 
 const AuthContext = createContext()
@@ -24,7 +24,13 @@ export const AuthContextProvider = ({ children }) => {
     getUser(true)
   }
 
-  const getUser = useCallback((isLogin) => {
+  const logout = ()=> {
+    deleteToken()
+    setUser(null)
+
+ }  
+ 
+ const getUser = useCallback((isLogin) => {
     getCurrentUser()
       .then(userFromAPI => {
         setUser(userFromAPI)
@@ -57,7 +63,8 @@ export const AuthContextProvider = ({ children }) => {
   const value = {
     user,
     login,
-    authenticationChecked
+    authenticationChecked,
+    logout
   }
 
   return (

@@ -1,12 +1,10 @@
 import "../../style/Style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
-import { logout } from "../../store/AccessTokenStore";
-
 
 const AuthButtons = () => {
   const navigate = useNavigate
-  const {user} = useAuthContext()
+  const {user, logout} = useAuthContext()
 
   const onSubmit = () => {
     logout()

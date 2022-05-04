@@ -15,7 +15,7 @@ import { useAuthContext } from "../contexts/AuthContext";
 
 export default function MainRouter() {
   // const {}
-  const { user} = useAuthContext()
+  // const { user} = useAuthContext()
   return (
   <Routes>
     <Route path={ROUTE.HOME} element={<Home />} />

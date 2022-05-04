@@ -1,19 +1,33 @@
+import { useState } from "react";
 
+const FavouritesSearches = ({ saveSearch }) => {
+  const [fav, setFav] = useState(localStorage.getItem("miPelicula") || [])
+  
+  // const fav = JSON.parse(localStorage.getItem("miPelicula")) || [];
 
-const FavouritesSearches = (props) => {
-  let searched = []
-
-  const saveSearch = (props) => {
-    const saveLocal = searched.push(props)
-    localStorage.setItem("mi pelicula", saveLocal)
-    console.log("dar favorito")
-    console.log(saveLocal)
+  const doSaveSearch = () => {
+    if (saveSearch) {
+      const miArray = [...fav, saveSearch.id]
+      localStorage.setItem('miPelicula', JSON.stringify(miArray))
+    }
+      
   }
+  
+  const deleteFav = (id) => {
+    const miArray = fav;
+    localStorage.removeItem("miPelicula", miArray)
+    console.log("fav", fav)
+
+  } 
+
+
 
 
   return ( 
     <>
-      <button onClick={saveSearch}>fav</button>
+      <button onClick={doSaveSearch}>fav</button>
+      <button onClick={deleteFav}> nofav</button>
+
     </>
    );
 }

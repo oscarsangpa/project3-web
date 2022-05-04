@@ -5,11 +5,13 @@ import Cast from "../../../components/Cast/Cast";
 import Information from "../../../components/Information/Information";
 import Review from "../../../components/Review/Review";
 import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
+import { useAuthContext } from "../../../contexts/AuthContext";
 
 export default function MovieDetail() {
   const [detailMovie, setDetailMovie] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
   const { movieId } = useParams();
+  const {user} = useAuthContext()
 
   useEffect(() => {
     if (movieId) {
@@ -26,13 +28,15 @@ export default function MovieDetail() {
     }
   }, [movieId]);
 
+  console.log("user", user)
+
   return (
     <>
       <Information info={detailMovie} />
       <FavouritesSearches saveSearch={detailMovie}/>
       <Cast cast={creditChar} />
 
-      <Review/>
+      <Review itemId={detailMovie.id}/>
     </>
   );
 }
