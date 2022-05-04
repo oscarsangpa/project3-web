@@ -14,10 +14,10 @@ body {
   }
 
   .background {
-    background-color: $light-background-color;
+    background-color: $primary-light-color;
   }
   .nav-color {
-    background-color: $primary-color;
+    background-color: $primary-dark-color;
   }
 
 }
@@ -28,7 +28,7 @@ body {
   }
 
   .background {
-      background-color: $primary-color;
+      background-color: $primary-dark-color;
   }
 
   .nav-color {
@@ -38,7 +38,7 @@ body {
 
 
   .bg-footer {
-    background-color: $primary-color;
+    background-color: $primary-dark-color;
     color: $light-text;
     padding-top: 1px;
     padding-bottom: 1px;
@@ -52,6 +52,13 @@ body {
     .link-tmdb {
       color: $tertiary-color;
     }
+
+  }
+
+  .auth-btn {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
 
   }
   

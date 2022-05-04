@@ -1,5 +1,5 @@
 // import "../../style/Style.css";
-import "../../style/ESTYLE.scss"
+import "../../style/styles.scss"
 import { Link } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 import AuthButtons from "../AuthButtons/AuthButtons";

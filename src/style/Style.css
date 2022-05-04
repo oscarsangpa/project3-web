@@ -45,6 +45,7 @@ main {
   background-color: #22a6b3;
   padding-right: 20px;
   color:#fff;
+  margin: 0 15px;
 }
 .input-search::placeholder{
   color:rgba(255,255,255,.5);
@@ -52,7 +53,7 @@ main {
   letter-spacing: 2px;
   font-weight: 100;
 }
-/* .btn-search{
+.btn-search{
   width: 50px;
   height: 50px;
   border-style: none;
@@ -66,7 +67,7 @@ main {
   color:#ffffff ;
   background-color:transparent;
   pointer-events: painted;  
-} */
+}
 .btn-search:focus ~ .input-search{
   width: 300px;
   border-radius: 0px;
@@ -119,22 +120,23 @@ main {
 
 /* HOME */
 
-.SearchBar {
+/* .SearchBar {
     padding: 70px 0 0 0;
-}
+} */
 
 .style {
     background-color: rgb(9, 63, 19);
 }
 
     .button {
-        background-color:#fff; /* white */
-        border-radius: 8px;
+        /* background-color:#fff; */
+        /* border-radius: 8px;
         color: #1e2040;
         padding: 8px 8px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 12px;
-        font-weight: bold;
+        font-weight: bold; */
+        border: none; 
 }

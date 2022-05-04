@@ -1,4 +1,4 @@
-import "../../style/Style.css";
+// import "../../style/Style.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useTheme } from "../../contexts/ThemeContext";
 import { useEffect, useState } from "react";

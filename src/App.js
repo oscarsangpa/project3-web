@@ -10,7 +10,7 @@ import {
   QueryClientProvider,
 } from "react-query";
 import { BrowserRouter } from "react-router-dom";
-import "./style/ESTYLE.scss"
+import "./style/styles.scss"
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 

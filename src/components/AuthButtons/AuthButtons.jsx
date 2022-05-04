@@ -23,19 +23,19 @@ const AuthButtons = () => {
           ( 
             <>
             <Link to={"/profile"}>
-              <button className="button">Profile</button>
+              <p className="auth-btn">Profile</p>
             </Link>
-              <button onClick={onSubmit}>logout</button> 
+              <p onClick={onSubmit}>logout</p> 
             </>
           )
           :   
           (
             <>
               <Link to={"/login"}>
-                <button className="button">Login</button>
+                <p className="auth-btn">Login</p>
               </Link>
               <Link to={"/register"}>
-                <button className="button">Register</button>
+                <p className="auth-btn">Register</p>
               </Link>
             </>
           )
