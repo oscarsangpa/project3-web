@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import SearchBar from "../SearchBar/SearchBar";
-import logo from "../../images/logo-KnownFor.png"
+import darkLogo from "../../images/Logo-dark-mode.png"
+import lightLogo from "../../images/Logo-light-mode.png"
 
 const Navbar = () => {
   const {theme, toggleTheme} = useTheme()
@@ -14,7 +15,11 @@ const Navbar = () => {
       <div className={theme}>
       <div className="Nav nav-color">
         <Link to={"/"}>
-          <img className="logo" src={logo} alt={""}/>
+        {
+          theme === "light" 
+          ? <img className="logo" src={lightLogo} alt={""}/>
+          : <img className="logo" src={darkLogo} alt={""}/> 
+        }
         </Link>
         <ul className="buttonsNav">
             <li>
@@ -25,7 +30,7 @@ const Navbar = () => {
             <AuthButtons />
           </li>
           <li>
-            <button onClick={toggleTheme}>{theme}</button>
+            <button onClick={toggleTheme}>{theme === "dark" ? "SUN" : "MOON"}</button>
           </li>
         </ul>
       </div>

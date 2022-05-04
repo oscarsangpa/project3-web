@@ -6,6 +6,7 @@ import { useState } from "react";
 import { login as loginRequest } from "../../services/AuthService";
 import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./login.module.css"
+import { useLocation, useNavigate } from "react-router-dom";
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -14,6 +15,10 @@ const schema = yup.object({
 
 
 const Login = () => {
+  const navigate = useNavigate()
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/profile";
 
   const { login } = useAuthContext()
 
@@ -29,7 +34,7 @@ const Login = () => {
 
     loginRequest(data)
       .then(response => {
-        login(response.access_token)
+        login(response.access_token, () => navigate(from, { replace: true }))
       })
       .catch((err) => {
         setError(err?.response?.data?.message)

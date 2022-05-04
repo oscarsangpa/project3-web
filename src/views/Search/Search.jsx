@@ -18,9 +18,9 @@ function Search() {
 
   useEffect(()=> {
     console.log()
-    const manolo = searchParams.get('manolo');
-    if(manolo) {
-      httpGet("/search/multi/?query=" + manolo)
+    const q = searchParams.get('q');
+    if(q) {
+      httpGet("/search/multi/?query=" + q)
       .then((data) => {
           setSearched(data.results);
         })

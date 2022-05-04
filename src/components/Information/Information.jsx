@@ -1,6 +1,6 @@
 import { BASE_IMG } from "../../services/TMDBService";
 import imgNotFound from "../../images/not-img.png";
-import styles from "../Person/person.module.css"
+import styles from "../Person/person.module.scss"
 
 const Information = (props) => {
   const {

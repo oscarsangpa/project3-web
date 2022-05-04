@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import InputGroup from "../../components/InputGroup/InputGroup"
 import { register as registerRequest } from '../../services/AuthService';
 
@@ -86,6 +86,9 @@ const Register = () => {
 
         <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Creating user...' : 'Submit'}</button>
       </form>
+        <p>
+        Are user now? login <Link to={"/login"}> here </Link>
+        </p>
     </div>
   )
 }

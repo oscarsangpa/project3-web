@@ -20,6 +20,13 @@ body {
     background-color: $primary-dark-color;
   }
 
+  .scroll-bar {
+    *::-webkit-scrollbar-track {
+      background: $primary-light-color;
+    }
+  }
+
+
 }
 
 .dark {
@@ -28,12 +35,34 @@ body {
   }
 
   .background {
-      background-color: $primary-dark-color;
+      background-color: $dark-color;
   }
 
   .nav-color {
-    background-color: $light-text;
+    background-color: $dark-mode2;
   }
+  .scroll-bar {
+    *::-webkit-scrollbar-track {
+      background: $primary-dark-color;
+    }
+  }
+}
+
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #1e2040;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #54a09f;
+  border-radius: 10px;
+  border: 3px;
+  width: 5px;
 }
 
 
@@ -60,6 +89,10 @@ body {
     text-decoration: none;
     margin: 0 8px;
 
+    &:hover {
+      color: yellow;
+    }
+
   }
 
   .error-form {
@@ -67,3 +100,8 @@ body {
     font-weight: bold;
   }
   
+  // texto titulo home
+
+  .title {
+    text-align: center;
+  }

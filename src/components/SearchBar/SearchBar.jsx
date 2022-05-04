@@ -18,7 +18,7 @@ const SearchBar = () => {
       onChange={handleChange}
     />
 
-          <button type="submit"> <Link to={`/search?manolo=${inputSearch}`}> Search </Link> </button>
+          <button type="submit"> <Link to={`/search?q=${inputSearch}`}> Search </Link> </button>
     </div>
   )
 }

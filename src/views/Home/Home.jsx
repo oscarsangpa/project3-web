@@ -4,6 +4,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { useEffect, useState } from "react";
 import { httpGet } from "../../services/TMDBService";
 import PopularSearched from "../../components/PopularSearched/PopularSearched";
+import './Home.scss'
 
 const Home = () => {
   const {theme} = useTheme()
@@ -74,11 +75,11 @@ const Home = () => {
 
       <SearchBar className="title" />
       <br />
-      <h2 className="text"> Most searched people</h2>
+      <h2 className="text title"> Most searched people</h2>
       <PopularSearched popular={people} />
-      <h2 className="text">Most searched movies</h2>
+      <h2 className="text title">Most searched movies</h2>
       <PopularSearched popular={movies} />
-      <h2 className="text">Most searched TV shows</h2>
+      <h2 className="text title">Most searched TV shows</h2>
       <PopularSearched popular={tvShows} />
         </div>
         </div>

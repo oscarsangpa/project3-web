@@ -5,7 +5,7 @@ import PersonInformation from "../../../components/Person/PersonInformation";
 import KnownFor from "../../../components/Person/KnownFor";
 import Filmography from "../../../components/Person/Filmography";
 import Review from "../../../components/Review/Review";
-import "../../../components/PopularSearched/PopularSearched.css";
+import "../../../components/PopularSearched/PopularSearched.scss";
 
 export default function PersonDetail({popular}) {
   const [detailPerson, setDetailPerson] = useState([]);
