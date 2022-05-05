@@ -11,8 +11,8 @@ import PersonDetail from "../views/Detail/PersonDetail/PersonDetail";
 import MovieDetail from "../views/Detail/MovieDetail/MovieDetail";
 import TvDetail from "../views/Detail/TvDetail/TvDetail";
 
+
 export default function MainRouter() {
-  
   return (
   <Routes>
     <Route path={ROUTE.HOME} element={<Home />} />

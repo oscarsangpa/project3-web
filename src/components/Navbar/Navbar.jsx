@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import SearchBar from "../SearchBar/SearchBar";
-import darkLogo from "../../images/Logo-dark-mode.png"
-import lightLogo from "../../images/Logo-light-mode.png"
+// import darkLogo from "../../images/Logo-dark-mode.png"
+import Logo from "../../images/Logo-light-mode.png"
 import "./Navbar.scss"
 
 const Navbar = () => {
@@ -14,32 +14,27 @@ const Navbar = () => {
   return (
     <>
       <div className={theme}>
-      <div className="Nav nav-color">
-        <Link to={"/"}>
-        {
-          theme === "light" 
-          ? <img className="logo" src={lightLogo} alt={""}/>
-          : <img className="logo" src={darkLogo} alt={""}/> 
-        }
-        </Link>
-        <ul className="buttonsNav">
+        <div className="Nav nav-color">
+          <Link to={"/"}>
+            <img className="logo" src={Logo} alt={""}/> 
+          </Link>
+          <ul className="buttonsNav">
             <li>
               <SearchBar/>
             </li>
-            
-          <li>
+            <li>
             <AuthButtons />
-          </li>
-          <li>
-            <button className="btn-theme" onClick={toggleTheme}>
+            </li>
+            <li>
+              <button className="btn-theme" onClick={toggleTheme}>
                   
-            {theme === "dark" 
-            ? <i class="fa-regular fa-lightbulb fa-xl"></i>
-            : <i class="fa-solid fa-lightbulb fa-xl"></i> }
-            </button>
-          </li>
-        </ul>
-      </div>
+                {theme === "dark" 
+                ? <i className="fa-regular fa-lightbulb fa-xl"></i>
+                : <i className="fa-solid fa-lightbulb fa-xl"></i> }
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );
