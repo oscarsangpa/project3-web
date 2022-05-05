@@ -24,10 +24,10 @@ const AuthButtons = () => {
             <>
             <Link to={"/profile"}>
               <p className="auth-btn title">
-                <img src={user.image} alt={user.name}/>
+                <img className="img-nav" src={user.image} alt={user.name}/>
               </p>
             </Link>
-              <button onClick={onSubmit}>logout</button> 
+              <p className="auth-btn title" onClick={onSubmit}>logout</p> 
             </>
           )
           :   

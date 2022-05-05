@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   return (
     <div className="search-box">
-    {/* <button className="btn-search"><i className="fas fa-search"></i></button> */}
+    <button className="btn-search"><i className="fas fa-search"></i></button>
     <input type="text" 
     className="input-search" 
     placeholder="Type to Search..."
@@ -19,9 +19,11 @@ const SearchBar = () => {
       onChange={handleChange}
     />
 
-          <button className="search-bar btn-icon" type="submit"> <Link to={`/search?q=${inputSearch}`}> 
-          <i class="fa-solid fa-magnifying-glass"></i> 
-          </Link> </button>
+          <button className="search-bar btn-icon" type="submit"> 
+          <Link to={`/search?q=${inputSearch}`}> 
+          {/* <i className="search-bar btn-icon searchButtonfa-solid fa-magnifying-glass"></i>  */}
+          </Link> 
+          </button>
     </div>
   )
 }

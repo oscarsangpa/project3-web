@@ -14,11 +14,11 @@
   letter-spacing: 2px;
   outline: none;
   border-radius: 15px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background-color: #22a6b3;
   padding-right: 20px;
-  color:#fff;
-  margin: 0 15px;
+  color: #0c0b0b;
+  margin: 4px 0;
 }
 .input-search::placeholder{
   color:rgba(255,255,255,.5);
@@ -60,4 +60,37 @@
   border: none;
   background-color: $primary-dark-color;
   color: $primary-white-color;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchButton {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  height: 100%;
+  // background-color: #22a6b3;
+  height: 25px;
+  width: 100px;
+  border-style: none;
+  padding: 8px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 15px;
+  transition: all .5s ease-in-out;
+  background-color: #22a6b3;
+  padding-right: 20px;
+  color:#fff;
+  margin: 0 15px;
+}
+
+.searchInput {
+  font-size: 1.2rem;
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px 30px 5px 10px;
+  border: 1px solid white;
 }

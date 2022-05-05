@@ -23,7 +23,7 @@ const Review = ({ itemId }) => {
 
     if (!description) {
       setErrors(true);
-      // console.log("ree", data, user)
+      console.log("ree", data, user)
     } else {
       createReview({ ...data, user, itemId })
         .then((review) => {
@@ -47,7 +47,7 @@ const Review = ({ itemId }) => {
   };
   return (
     <>
-        {/* {user.reviews.map((rew) => {
+        {user.reviews.map((rew) => {
             return (
               <div class="comment-main-box">
                 <div class="comments-box">
@@ -75,7 +75,7 @@ const Review = ({ itemId }) => {
           })}
           
 
-          {
+          {/* {
             !user &&
 
 
@@ -88,8 +88,8 @@ const Review = ({ itemId }) => {
     {sendReview ? "Creating review" : "Send review"}
   </button>
             </div>)
-          }
-             */}
+          } */}
+            
     </>
   );
 };

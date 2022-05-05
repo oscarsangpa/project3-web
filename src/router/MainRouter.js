@@ -10,12 +10,9 @@ import Profile from "../views/Profile/Profile";
 import PersonDetail from "../views/Detail/PersonDetail/PersonDetail"; 
 import MovieDetail from "../views/Detail/MovieDetail/MovieDetail";
 import TvDetail from "../views/Detail/TvDetail/TvDetail";
-import { useAuthContext } from "../contexts/AuthContext";
 
 
 export default function MainRouter() {
-  // const {}
-  // const { user} = useAuthContext()
   return (
   <Routes>
     <Route path={ROUTE.HOME} element={<Home />} />
