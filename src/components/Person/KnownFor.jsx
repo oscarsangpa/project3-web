@@ -5,13 +5,13 @@ import imgNotFound from "../../images/not-img.png";
 export default function KnownFor({ creditCast }) {
   return (
     <>
-      <h3> Known For...</h3>
+      <h3 className="knownfor-title"> Known For...</h3>
       <div className="containerMostSearched">
         {creditCast?.cast?.map(
           ({ id, media_type, poster_path, original_title, original_name }) => {
             return (
               <div key={id} className="itemMostSearched">
-                <Link
+                <Link className="knowfor-carousel text"
                   to={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`}
                 >
                   {poster_path && (

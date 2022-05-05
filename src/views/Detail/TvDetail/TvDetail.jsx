@@ -4,6 +4,7 @@ import { httpGet } from "../../../services/TMDBService";
 import Cast from "../../../components/Cast/Cast";
 import Information from "../../../components/Information/Information";
 import Review from "../../../components/Review/Review";
+import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
 
 export default function SerieDetail() {
   const [detailTv, setDetailTv] = useState([]);
@@ -29,9 +30,10 @@ export default function SerieDetail() {
 
   return (
     <>
+      <FavouritesSearches saveSearch={detailTv}/>
       <Information info={detailTv} background={background} />
       <Cast cast={creditChar} />
-      <Review/>
+      <Review itemId={detailTv.id}/>
     </>
   );
 }

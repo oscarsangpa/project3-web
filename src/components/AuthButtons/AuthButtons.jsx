@@ -1,12 +1,12 @@
 import "../../style/Style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
-import { logout } from "../../store/AccessTokenStore";
-
+import { useTheme } from "../../contexts/ThemeContext";
 
 const AuthButtons = () => {
+  const {theme} = useTheme()
   const navigate = useNavigate
-  const {user} = useAuthContext()
+  const {user, logout} = useAuthContext()
 
   const onSubmit = () => {
     logout()
@@ -16,14 +16,14 @@ const AuthButtons = () => {
   }
 
   return ( 
-    <>
+    <nav className={theme}>
       <div className="buttonsLRP">
         {
           user ?
           ( 
             <>
             <Link to={"/profile"}>
-              <p className="auth-btn">Profile</p>
+              <p className="auth-btn title">Profile</p>
             </Link>
               <button onClick={onSubmit}>logout</button> 
             </>
@@ -32,16 +32,16 @@ const AuthButtons = () => {
           (
             <>
               <Link to={"/login"}>
-                <p className="auth-btn">Login</p>
+                <p className="auth-btn title">Login</p>
               </Link>
               <Link to={"/register"}>
-                <p className="auth-btn">Register</p>
+                <p className="auth-btn title">Register</p>
               </Link>
             </>
           )
         }
       </div>
-    </>
+    </nav>
    );
 }
  

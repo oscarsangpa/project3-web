@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./SearchBar.scss"
 
 const SearchBar = () => {
   const [inputSearch, setInputSearch] = useState("");
@@ -18,7 +19,7 @@ const SearchBar = () => {
       onChange={handleChange}
     />
 
-          <button type="submit"> <Link to={`/search?q=${inputSearch}`}> Search </Link> </button>
+          <button className="search-bar" type="submit"> <Link to={`/search?q=${inputSearch}`}> Search </Link> </button>
     </div>
   )
 }

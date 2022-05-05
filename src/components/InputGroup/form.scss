@@ -1,0 +1,30 @@
+@import "../../style/variables.scss";
+
+.container-form {
+  border: 2px solid black;
+
+}
+
+.title-form {
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $secundary-color;
+  border-color: $secundary-color;
+  padding: 8px 14px;
+  border-radius: 3px;
+}
+
+.error-form {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}

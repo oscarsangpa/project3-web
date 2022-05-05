@@ -5,12 +5,16 @@ import PersonInformation from "../../../components/Person/PersonInformation";
 import KnownFor from "../../../components/Person/KnownFor";
 import Filmography from "../../../components/Person/Filmography";
 import Review from "../../../components/Review/Review";
+import { useAuthContext } from "../../../contexts/AuthContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 import "../../../components/PopularSearched/PopularSearched.scss";
 
 export default function PersonDetail({popular}) {
   const [detailPerson, setDetailPerson] = useState([]);
   const [creditPerson, setCreditPerson] = useState();
   const { personId } = useParams();
+  const {user} = useAuthContext()
+  const { theme} = useTheme()
 
   useEffect(() => {
     if (personId) {
@@ -27,14 +31,15 @@ export default function PersonDetail({popular}) {
   }, [personId]);
 
   return (
-    <>
+    <div className={theme}>
+    <div className="background">
       <PersonInformation personInfo={detailPerson} />
 
       <KnownFor creditCast={creditPerson} />
 
+      <Review itemId={detailPerson.id}/>
       <Filmography credits={creditPerson} />
-
-      <Review/>
-    </>
+      </div>
+    </div>
   );
 }

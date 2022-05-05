@@ -1,6 +1,7 @@
 import { BASE_IMG } from "../../services/TMDBService";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
+import "./PopularSearched.scss"
 
 const PopularSearched = (props) => {
   const { theme} = useTheme()
@@ -11,7 +12,7 @@ const PopularSearched = (props) => {
       <div className="containerMostSearched">
         {props.popular?.map((el) => {
           return (
-            <div key={el.id} className="itemMostSearched section">
+            <div key={el.id} className="itemMostSearched section title ">
               <Link className="text"
                 to={
                   el.profile_path
@@ -29,7 +30,7 @@ const PopularSearched = (props) => {
                   }
                   alt={el.title}
                 />
-                <h5>{el.title || el.name}</h5>
+                <h5 className="title-carousel">{el.title || el.name}</h5>
               </Link>
             </div>
           );
