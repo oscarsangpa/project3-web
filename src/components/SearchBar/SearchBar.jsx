@@ -19,7 +19,9 @@ const SearchBar = () => {
       onChange={handleChange}
     />
 
-          <button className="search-bar" type="submit"> <Link to={`/search?q=${inputSearch}`}> Search </Link> </button>
+          <button className="search-bar btn-icon" type="submit"> <Link to={`/search?q=${inputSearch}`}> 
+          <i class="fa-solid fa-magnifying-glass"></i> 
+          </Link> </button>
     </div>
   )
 }

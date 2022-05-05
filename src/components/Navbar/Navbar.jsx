@@ -34,8 +34,8 @@ const Navbar = () => {
             <button className="btn-theme" onClick={toggleTheme}>
                   
             {theme === "dark" 
-            ? <i class="fa-regular fa-lightbulb  fa-xl"></i>
-            : <i class="fa-solid fa-lightbulb  fa-xl"></i> }
+            ? <i class="fa-regular fa-lightbulb fa-xl"></i>
+            : <i class="fa-solid fa-lightbulb fa-xl"></i> }
             </button>
           </li>
         </ul>

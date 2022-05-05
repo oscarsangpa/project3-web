@@ -5,7 +5,8 @@ import { httpGet } from "../../services/TMDBService";
 import "./Profile.scss";
 
 
-const Profile = () => {
+
+const Profile = ({}) => {
   const [mySearch, setMySearch] = useState([])
   const { user } = useAuthContext();
   const { theme } = useTheme();
