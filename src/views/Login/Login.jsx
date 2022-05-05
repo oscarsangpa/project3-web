@@ -7,6 +7,7 @@ import { login as loginRequest } from "../../services/AuthService";
 import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./login.module.css"
 import { useLocation, useNavigate } from "react-router-dom";
+import "../../components/InputGroup/form.scss"
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -44,19 +45,21 @@ const Login = () => {
       })
   };
   return ( 
-    <div className={styles.container}>
-    <h1 className="mt-3">Login</h1>
+    <>
 
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="container-form">
+    <h1 className="title-form">Login</h1>
+
+    <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <InputGroup
-        label="Email"
+        placeholder="Email"
         id="email"
         register={register}
         error={errors.email?.message}
         type="email"
       />
       <InputGroup
-        label="Password"
+        placeholder="Password"
         id="password"
         register={register}
         error={error || errors.password?.message}
@@ -66,6 +69,7 @@ const Login = () => {
       <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Login...' : 'Submit'}</button>
     </form>
   </div>
+    </>
 )
 }
  

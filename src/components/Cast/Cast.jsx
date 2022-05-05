@@ -1,5 +1,6 @@
 import { BASE_IMG } from "../../services/TMDBService";
 import { Link } from "react-router-dom";
+import "./Cast.scss";
 
 const Cast = (props) => {
   return (
@@ -9,7 +10,7 @@ const Cast = (props) => {
         {props.cast.cast?.map((credit) => {
           return (
             <div key={credit.id} className="itemMostSearched">
-              <Link to={`/person/${credit.id}`}>
+              <Link className="title-cast" to={`/person/${credit.id}`}>
                 <img
                   src={`${BASE_IMG}${credit.profile_path}`}
                   alt={credit.title}

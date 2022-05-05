@@ -39,9 +39,9 @@ const Filmography = ({ credits }) => {
             <li>
               {credit.release_date === undefined || ""
                 ? ` ____ - `
-                : `${credit.release_date.slice(0,4)} - In ` || `${credit.first_air_date} - In `}
+                : `${credit.release_date.slice(0,4)} —  In ` || `${credit.first_air_date} ―  In `}
 
-              <Link
+              <Link className="link-title text"
                 to={
                   credit.media_type === "movie"
                     ? `/movie/${credit.id}`

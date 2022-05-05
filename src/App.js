@@ -1,18 +1,12 @@
-import "./style/Style.css";
+// import "./style/Style.css";
 import MainRouter from "./router/MainRouter";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { ThemeContextProvider } from "./contexts/ThemeContext";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
-import "./style/styles.scss"
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+// import "./style/styles.scss"
 
 const queryClient = new QueryClient();
 

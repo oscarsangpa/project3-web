@@ -66,11 +66,11 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className={theme}>
         {/* <p className="title"> Welcome to the page that helps you find what this actor is known for.</p>
         
         <p className="title">You can search for people, movies or TV shows and see where they starred.</p> */}
-        <div className={theme}>
+
         <div className="background">
 
       <SearchBar className="title" />
@@ -82,8 +82,7 @@ const Home = () => {
       <h2 className="text title">Most searched TV shows</h2>
       <PopularSearched popular={tvShows} />
         </div>
-        </div>
-    </>
+    </div>
   );
 };
 

@@ -1,18 +1,19 @@
 // import { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import { /*httpGet,*/ BASE_IMG } from "../../services/TMDBService";
-import styles from "./person.module.scss";
+import FavouritesSearches from "../FavouritesSearchs/FavouritesSearches";
+import "./person.scss";
 
 export default function PersonInformation({personInfo}) {
 
     return (
         <>
-          <h2>{personInfo.name}</h2>
-          <div className={styles.infoContainer}>
+          <h2 className="knownfor-title">{personInfo.name}</h2>
+          <div className="info-container">
 
           {personInfo.profile_path && 
-          <img className={styles.imgProfile} src={`${BASE_IMG}${personInfo.profile_path}`} alt={""}/>}
-          <ul className={styles.infoItems}>
+          <img className="img-profile" src={`${BASE_IMG}${personInfo.profile_path}`} alt={""}/>}
+          <ul className="info-items">
             <li>
                 <strong>Known For: </strong>{personInfo.known_for_department}
             </li>
@@ -25,9 +26,12 @@ export default function PersonInformation({personInfo}) {
             <li>
                 <strong>Gender: </strong> {personInfo.gender === 1 ? "Female" : "Male"}
             </li>
-          </ul>  
+          </ul>
           </div>
-            <p className={styles.biography}>
+            <div>
+            <FavouritesSearches saveSearch={personInfo}/>  
+            </div>
+            <p className="biography">
                 <strong>Biography: </strong> {personInfo.biography}
             </p>
         </>

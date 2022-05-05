@@ -6,8 +6,10 @@ import Information from "../../../components/Information/Information";
 import Review from "../../../components/Review/Review";
 import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
 import { useAuthContext } from "../../../contexts/AuthContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 
 export default function MovieDetail() {
+  const { theme} = useTheme()
   const [detailMovie, setDetailMovie] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
   const { movieId } = useParams();
@@ -28,15 +30,16 @@ export default function MovieDetail() {
     }
   }, [movieId]);
 
-  console.log("user", user)
-
   return (
-    <>
+    <div className={theme}>
+    <div className="background">
       <Information info={detailMovie} />
-      <FavouritesSearches saveSearch={detailMovie}/>
+      {/* <FavouritesSearches saveSearch={detailMovie}/> */}
       <Cast cast={creditChar} />
 
       <Review itemId={detailMovie.id}/>
-    </>
+    </div>
+      
+    </div>
   );
 }

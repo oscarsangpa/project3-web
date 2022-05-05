@@ -8,4 +8,4 @@ export const getPost = (id) => http.get(`/review/${id}`)
 
 export const updatePost = (id, data) => http.patch(`/review/${id}`, data)
 
-export const deletePost = (id) => http.delete(`/review/${id}`)
+export const deleteReview = (id) => http.delete(`/review/${id}`)

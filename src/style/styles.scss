@@ -1,10 +1,26 @@
 @import "./variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Poppins:wght@200&display=swap');
 
-body {
+* {
   font-family: 'Poppins', sans-serif;
   // background-color: #1e2040 ;
   // color:#fff
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+// *::-webkit-scrollbar-track {
+//   background: #1e2040;
+// }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #54a09f;
+  border-radius: 10px;
+  border: 3px;
+  width: 5px;
 }
 
 .light {
@@ -14,18 +30,21 @@ body {
   }
 
   .background {
-    background-color: $primary-light-color;
+    background-color: $primary-white-color;
   }
   .nav-color {
     background-color: $primary-dark-color;
   }
 
   .scroll-bar {
-    *::-webkit-scrollbar-track {
-      background: $primary-light-color;
+    ::-webkit-scrollbar-track {
+      background: $primary-white-color;
     }
   }
 
+  h1,h2,h3,h4,h5,h6, li {
+    color: $dark-color;
+  }
 
 }
 
@@ -42,28 +61,18 @@ body {
     background-color: $dark-mode2;
   }
   .scroll-bar {
-    *::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
       background: $primary-dark-color;
     }
+  }
+
+  h1,h2,h3,h4,h5,h6, p, li {
+    color: $light-text;
   }
 }
 
 
-*::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
 
-*::-webkit-scrollbar-track {
-  background: #1e2040;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #54a09f;
-  border-radius: 10px;
-  border: 3px;
-  width: 5px;
-}
 
 
   .bg-footer {
@@ -95,10 +104,7 @@ body {
 
   }
 
-  .error-form {
-    color: red;
-    font-weight: bold;
-  }
+ 
   
   // texto titulo home
 

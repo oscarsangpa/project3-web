@@ -1,11 +1,12 @@
 // import "../../style/Style.css";
-import "../../style/styles.scss"
+// import "../../style/styles.scss"
 import { Link } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import SearchBar from "../SearchBar/SearchBar";
 import darkLogo from "../../images/Logo-dark-mode.png"
 import lightLogo from "../../images/Logo-light-mode.png"
+import "./Navbar.scss"
 
 const Navbar = () => {
   const {theme, toggleTheme} = useTheme()

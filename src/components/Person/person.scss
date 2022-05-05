@@ -1,0 +1,41 @@
+@import "../../style/styles.scss";
+
+.title {
+  
+}
+
+.info-container {
+  display: flex;
+  margin-bottom: 3em;
+}
+.info-container li {
+  list-style: none;
+}
+
+.info-items {
+  justify-items: center;
+}
+
+.img-profile {
+  width: 8em;
+  margin-left: 2em;
+}
+
+.biography {
+  margin-left: 2em;
+  // margin-top: -1em;
+}
+
+.knownfor-title {
+  margin-left: 2em;
+}
+
+.link-title {
+  text-decoration: none;
+
+}
+
+
+.btn-fav {
+  margin-left: 2em;;
+}

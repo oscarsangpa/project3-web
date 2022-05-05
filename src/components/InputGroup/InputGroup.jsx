@@ -1,6 +1,7 @@
 import '../../style/styles.scss'
 const InputGroup = ({ label, id, name, type, placeholder, register, error }) => {
   return (
+    <>
     <div className="mb-3">
       <label htmlFor={id} className="form-label">
         {label}
@@ -12,8 +13,10 @@ const InputGroup = ({ label, id, name, type, placeholder, register, error }) => 
         placeholder={placeholder}
         {...register(id)}
       />
-      <p className="error-form">{error}</p>
     </div>
+
+      <p className="error-form">{error}</p>
+    </>
   )
 }
 

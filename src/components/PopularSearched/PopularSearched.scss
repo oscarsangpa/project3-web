@@ -15,8 +15,12 @@
 img {
   width: 80px;
   border-radius: 10px;
+
+  &:hover{
+    opacity: 0.8;
+  }
 }
 
-.Link {
+Link {
   text-decoration: none;
 }
