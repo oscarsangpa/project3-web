@@ -31,7 +31,12 @@ const Navbar = () => {
             <AuthButtons />
           </li>
           <li>
-            <button onClick={toggleTheme}>{theme === "dark" ? "SUN" : "MOON"}</button>
+            <button className="btn-theme" onClick={toggleTheme}>
+                  
+            {theme === "dark" 
+            ? <i class="fa-regular fa-lightbulb  fa-xl"></i>
+            : <i class="fa-solid fa-lightbulb  fa-xl"></i> }
+            </button>
           </li>
         </ul>
       </div>

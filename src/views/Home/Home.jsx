@@ -73,7 +73,7 @@ const Home = () => {
 
         <div className="background">
 
-      <SearchBar className="title" />
+      {/* <SearchBar className="title" /> */}
       <br />
       <h2 className="text title"> Most searched people</h2>
       <PopularSearched popular={people} />

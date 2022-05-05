@@ -86,10 +86,10 @@ const Register = () => {
         />
 
         <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Creating user...' : 'Submit'}</button>
-      </form>
         <p>
-        Are user now? login <Link to={"/login"}> here </Link>
+        Are you already registered? Login <Link to={"/login"}> here </Link>
         </p>
+      </form>
     </div>
   )
 }

@@ -21,6 +21,7 @@ const PopularSearched = (props) => {
                     ? `/movie/${el.id}`
                     : el.name && `/tv/${el.id}`
                 }
+                
               >
                 <img
                   src={

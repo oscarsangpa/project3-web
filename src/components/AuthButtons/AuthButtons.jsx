@@ -1,7 +1,7 @@
-import "../../style/Style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useTheme } from "../../contexts/ThemeContext";
+import "./AuthButtons.scss";
 
 const AuthButtons = () => {
   const {theme} = useTheme()
