@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { BASE_IMG } from "../../services/TMDBService";
-import imgNotFound from "../../images/not-img.png";
+import imgNotFound from "../../images/img-notfound.png";
 
 export default function KnownFor({ creditCast }) {
   return (
@@ -16,7 +16,7 @@ export default function KnownFor({ creditCast }) {
                 >
                   {poster_path && (
                     <img
-                      src={poster_path === null ? `${imgNotFound}` : `${BASE_IMG}${poster_path}`}
+                      src={poster_path === "" || undefined ? `${imgNotFound}` : `${BASE_IMG}${poster_path}`}
                       alt={original_title || original_name}
                     />
                   )}

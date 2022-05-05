@@ -1,0 +1,19 @@
+ @import "../../style/variables.scss";
+ 
+  .bg-footer {
+    background-color: $primary-dark-color;
+    color: $light-text;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+
+    a {
+      text-decoration: none;
+      color: $light-text;
+    }
+    .link-tmdb {
+      color: $tertiary-color;
+    }
+
+  }

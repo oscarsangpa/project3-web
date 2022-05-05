@@ -21,9 +21,6 @@ const FavouritesSearches = ({ saveSearch }) => {
 
   } 
 
-
-
-
   return ( 
     <div className="btn-fav">
       <button onClick={doSaveSearch}>fav</button>

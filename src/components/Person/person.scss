@@ -1,8 +1,4 @@
-@import "../../style/styles.scss";
-
-.title {
-  
-}
+@import "../../style/variables.scss";
 
 .info-container {
   display: flex;
@@ -32,6 +28,11 @@
 
 .link-title {
   text-decoration: none;
+
+  &:hover {
+    color: $tertiary-color;
+    font-weight: bold;
+  }
 
 }
 

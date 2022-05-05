@@ -1,7 +1,7 @@
-import "../../style/Style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useTheme } from "../../contexts/ThemeContext";
+import "./AuthButtons.scss";
 
 const AuthButtons = () => {
   const {theme} = useTheme()
@@ -23,7 +23,9 @@ const AuthButtons = () => {
           ( 
             <>
             <Link to={"/profile"}>
-              <p className="auth-btn title">Profile</p>
+              <p className="auth-btn title">
+                <img src={user.image} alt={user.name}/>
+              </p>
             </Link>
               <button onClick={onSubmit}>logout</button> 
             </>

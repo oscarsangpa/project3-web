@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Filter from "../../components/Filter/Filter";
 import { httpGet } from "../../services/TMDBService";
-import styles from "./search.module.css";
+import { useTheme } from "../../contexts/ThemeContext";
+import "../../style/styles.scss";
+import "./search.scss";
 
 function Search() {
+  const {theme} = useTheme();
   const [searched, setSearched] = useState([]);
   const [searchParams] = useSearchParams({});
   const [listToShow, setListToShow] = useState("all");
@@ -28,8 +31,13 @@ function Search() {
   }, [searchParams])
 
   return (
-    <>  
-      <div className={styles.list}>
+     
+      <div className={theme}>
+
+      <div>
+
+      
+      <div className="list background">
 
         <p onClick={() => setListToShow("all")}>
           All ({searched.length}):
@@ -45,7 +53,7 @@ function Search() {
 
       </div>
 
-      <div>
+      <div className="background">
         {listToShow === "movie" && ( 
           <div>
             <Filter list={filterMovie} />
@@ -63,8 +71,8 @@ function Search() {
         )}
         {listToShow === "all" && <Filter list={searched} />}
       </div>
-
-    </>
+      </div>    
+      </div>
   );
 }
 

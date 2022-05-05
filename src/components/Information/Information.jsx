@@ -1,5 +1,5 @@
 import { BASE_IMG } from "../../services/TMDBService";
-import imgNotFound from "../../images/not-img.png";
+import imgNotFound from "../../images/img-notfound.png";
 import "../Person/person.scss";
 import { useTheme } from "../../contexts/ThemeContext";
 import FavouritesSearches from "../FavouritesSearchs/FavouritesSearches";
@@ -26,6 +26,7 @@ const Information = (props) => {
           alt={original_title || original_name}
         />
 
+    <FavouritesSearches saveSearch={props.info} />
 
         <h4 className="title container-info"> - Companies - </h4>
 
@@ -53,7 +54,6 @@ const Information = (props) => {
           <strong>Release date: </strong>
           {release_date || first_air_date}
         </p>
-        <FavouritesSearches saveSearch={props.info} />
         <p>
           <strong>Synopsis: </strong>
           {overview}

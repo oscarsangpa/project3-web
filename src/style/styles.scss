@@ -3,18 +3,20 @@
 
 * {
   font-family: 'Poppins', sans-serif;
-  // background-color: #1e2040 ;
-  // color:#fff
+}
+
+body {
+  margin: 0;
+}
+
+main {
+padding-top: 80px;
 }
 
 *::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
-// *::-webkit-scrollbar-track {
-//   background: #1e2040;
-// }
 
 *::-webkit-scrollbar-thumb {
   background-color: #54a09f;
@@ -73,41 +75,6 @@
 
 
 
-
-
-  .bg-footer {
-    background-color: $primary-dark-color;
-    color: $light-text;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    display: flex;
-    flex-direction: row;
-
-    a {
-      text-decoration: none;
-      color: $light-text;
-    }
-    .link-tmdb {
-      color: $tertiary-color;
-    }
-
-  }
-
-  .auth-btn {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-
-    &:hover {
-      color: yellow;
-    }
-
-  }
+ 
 
  
-  
-  // texto titulo home
-
-  .title {
-    text-align: center;
-  }

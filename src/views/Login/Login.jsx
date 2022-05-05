@@ -6,7 +6,7 @@ import { useState } from "react";
 import { login as loginRequest } from "../../services/AuthService";
 import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./login.module.css"
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "../../components/InputGroup/form.scss"
 
 const schema = yup.object({
@@ -67,6 +67,9 @@ const Login = () => {
       />
 
       <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Login...' : 'Submit'}</button>
+      <p>
+      Don't have an account? Register <Link to={"/register"}> here </Link>
+        </p>
     </form>
   </div>
     </>

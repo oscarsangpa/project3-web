@@ -5,8 +5,10 @@ import Cast from "../../../components/Cast/Cast";
 import Information from "../../../components/Information/Information";
 import Review from "../../../components/Review/Review";
 import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
+import { useTheme } from "../../../contexts/ThemeContext";
 
 export default function SerieDetail() {
+  const { theme } = useTheme()
   const [detailTv, setDetailTv] = useState([]);
   const [background, setBackground] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
@@ -29,11 +31,13 @@ export default function SerieDetail() {
   }, [tvId]);
 
   return (
-    <>
-      <FavouritesSearches saveSearch={detailTv}/>
+    <div className={theme}>
+    <div className="background">
+      {/* <FavouritesSearches saveSearch={detailTv}/> */}
       <Information info={detailTv} background={background} />
       <Cast cast={creditChar} />
       <Review itemId={detailTv.id}/>
-    </>
+    </div>
+    </div>
   );
 }
