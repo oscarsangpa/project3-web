@@ -3,8 +3,6 @@ import "./Favorites.scss"
 
 const FavouritesSearches = ({ saveSearch }) => {
   const [fav, setFav] = useState(localStorage.getItem("mySearch") || [])
-  
-  
   const doSaveSearch = () => {
     if (saveSearch) {
       const fav = JSON.parse(localStorage.getItem("miPelicula")) || [];
@@ -13,7 +11,7 @@ const FavouritesSearches = ({ saveSearch }) => {
     }
       
   }
-  
+
   const deleteFav = (id) => {
     const miArray = fav;
     localStorage.removeItem("mySearch", miArray)
