@@ -47,7 +47,7 @@ const Review = ({ itemId }) => {
   };
   return (
     <>
-        {user.reviews.map((rew) => {
+        {/* {user.reviews.map((rew) => {
             return (
               <div className="comment-main-box">
                 <div className="comments-box">
@@ -72,7 +72,7 @@ const Review = ({ itemId }) => {
                 </div>
               </div>
             );
-          })}
+          })} */}
           
 
           {/* {

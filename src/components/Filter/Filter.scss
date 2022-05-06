@@ -2,11 +2,21 @@
 
 .container-filter {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
 }
 
 .container-filter li {
   list-style: none;
+}
+.item-filter {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-list-img {
+  width: 60px;
+  margin-left: 3em;
+  border-radius: 6px;
 }
 
 

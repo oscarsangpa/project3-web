@@ -1,3 +1,4 @@
+@import "../../style/variables.scss";
 
 
 .auth-btn {
@@ -6,11 +7,10 @@
   margin: 14px 8px;
 
   &:hover {
-    color: yellow;
+    color: $tertiary-color;
   }
 
 }
-
 
 .btns {
   margin: auto;

@@ -32,7 +32,7 @@ const Filmography = ({ credits }) => {
 
   return (
     <>
-      <h3>- Filmography - </h3>
+      <h3 className="biography"> Filmography </h3>
       {sorted?.map((credit, index) => {
         return (
           <ul key={index}>

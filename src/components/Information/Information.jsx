@@ -26,20 +26,22 @@ const Information = (props) => {
           alt={original_title || original_name}
         />
 
-    <FavouritesSearches saveSearch={props.info} />
+    <FavouritesSearches className="btn-fav" saveSearch={props.info} />
 
-        <h4 className="title container-info"> - Companies - </h4>
+        <h4 className="title container-info"> Companies </h4>
 
         <div className="container-info">
         {production_companies?.map((production, index) => {
           return (
-              <ul key={index}>
-                <li className="item-info">{production.name}</li>
+            <div className="companies-info">
+              <ul className="" key={index}>
+                <li>{production.name}</li>
               </ul>
+            </div>
           );
         })}
 
-        <h4>- Genres -</h4>
+        <h4 className="item-info"> Genres </h4>
 
         {genres?.map((genres, index) => {
           return (

@@ -15,7 +15,7 @@ export default function PersonInformation({personInfo}) {
           <img className="img-profile" src={`${BASE_IMG}${personInfo.profile_path}`} alt={""}/>}
           <ul className="info-items">
             <li>
-                <strong>Known For: </strong>{personInfo.known_for_department}
+                <strong>Known for: </strong>{personInfo.known_for_department}
             </li>
             <li>
                 <strong>Born in: </strong>{personInfo.place_of_birth}
