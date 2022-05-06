@@ -7,6 +7,7 @@
 
 body {
   margin: 0;
+  // margin-top: -20px;
 }
 
 main {
@@ -70,6 +71,10 @@ padding-top: 80px;
 
   h1,h2,h3,h4,h5,h6, p, li {
     color: $light-text;
+  }
+
+  body {
+    background-color: $dark-color;
   }
 }
 

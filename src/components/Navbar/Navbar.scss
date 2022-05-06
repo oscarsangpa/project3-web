@@ -25,6 +25,7 @@
 
 .buttonsNav > li {
   list-style: none;
+  margin:auto;
 }
 
 .buttonsLRP{
@@ -103,4 +104,10 @@
   color: $primary-white-color;
   margin: 14px 8px;
 }
+
+.img-nav {
+  width: 50px;
+  margin-top: 8px;
+}
+
 

@@ -1,7 +1,7 @@
 @import "../../style/variables.scss";
 
 .container-form {
-  border: 2px solid black;
+  border: 2px solid $dark-color;
 
 }
 
@@ -27,4 +27,12 @@
   color: red;
   font-weight: bold;
   text-align: center;
+}
+
+.link-auth {
+  color: $light-text;
+
+  &:hover {
+    color: $tertiary-color;
+  }
 }

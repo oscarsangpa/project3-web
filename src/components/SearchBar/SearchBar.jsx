@@ -9,14 +9,23 @@ const SearchBar = () => {
     setInputSearch(event.target.value)
   }
 
+  // const handleonBlur = () => {
+  //   setInputSearch("")
+  // }
+  
   return (
     <div className="search-box">
-    <button className="btn-search"><i className="fas fa-search"></i></button>
+    <button className="btn-search">
+    <Link to={`/search?q=${inputSearch}`}>
+    <i className="fas fa-search"></i>
+    </Link>
+    </button>
     <input type="text" 
     className="input-search" 
     placeholder="Type to Search..."
       value={inputSearch}
       onChange={handleChange}
+      // onBlur={handleonBlur}
     />
 
           <button className="search-bar btn-icon" type="submit"> 

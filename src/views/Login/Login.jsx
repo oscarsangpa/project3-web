@@ -5,8 +5,9 @@ import InputGroup from "../../components/InputGroup/InputGroup";
 import { useState } from "react";
 import { login as loginRequest } from "../../services/AuthService";
 import { useAuthContext } from "../../contexts/AuthContext";
-import styles from "./login.module.css"
+// import styles from "./login.module.css"
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useTheme } from "../../contexts/ThemeContext";
 import "../../components/InputGroup/form.scss"
 
 const schema = yup.object({
@@ -16,6 +17,7 @@ const schema = yup.object({
 
 
 const Login = () => {
+  const {theme} = useTheme()
   const navigate = useNavigate()
   let location = useLocation();
 
@@ -45,7 +47,8 @@ const Login = () => {
       })
   };
   return ( 
-    <>
+    <div className={theme}>
+    <div className="background">
 
     <div className="container-form">
     <h1 className="title-form">Login</h1>
@@ -66,13 +69,14 @@ const Login = () => {
         type="password"
       />
 
-      <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Login...' : 'Submit'}</button>
+      <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Login...' : 'Sign In'}</button>
       <p>
-      Don't have an account? Register <Link to={"/register"}> here </Link>
+      Don't have an account? Register <Link className="link-auth" to={"/register"}> here </Link>
         </p>
     </form>
   </div>
-    </>
+    </div>
+    </div>
 )
 }
  

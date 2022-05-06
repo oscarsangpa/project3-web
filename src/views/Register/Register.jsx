@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { Link, useNavigate } from 'react-router-dom'
 import InputGroup from "../../components/InputGroup/InputGroup"
 import { register as registerRequest } from '../../services/AuthService';
+import { useTheme } from '../../contexts/ThemeContext';
 import "../../components/InputGroup/form.scss"
 
 
@@ -15,6 +16,7 @@ const schema = yup.object({
 }).required();
 
 const Register = () => {
+  const { theme} = useTheme()
   const [backErrors, setBackErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const navigate = useNavigate()
@@ -53,6 +55,8 @@ const Register = () => {
   };
 
   return (
+    <div className={theme}>
+    <div className="background">
     <div className='container-form' >
       <h1 className='title'>Register</h1>
 
@@ -78,6 +82,7 @@ const Register = () => {
           type="password"
         />
         <InputGroup
+          className="text"
           placeholder="User image"
           id="image"
           register={register}
@@ -87,9 +92,11 @@ const Register = () => {
 
         <button className={`btn btn-${isSubmitting ? 'secondary' : 'primary'}`}>{isSubmitting ? 'Creating user...' : 'Submit'}</button>
         <p>
-        Are you already registered? Login <Link to={"/login"}> here </Link>
+        Are you already registered? Login <Link className="link-auth" to={"/login"}> here </Link>
         </p>
       </form>
+    </div>
+    </div>
     </div>
   )
 }

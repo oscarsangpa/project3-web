@@ -49,19 +49,19 @@ const Review = ({ itemId }) => {
     <>
         {user.reviews.map((rew) => {
             return (
-              <div class="comment-main-box">
-                <div class="comments-box">
-                  <div class="profile-pic">
-                    <img
-                      src="https://s.gravatar.com/avatar/c75a0943b348f2aedb1cdee6a09e17d8?d=mm&s=70"
-                      alt=""
+              <div className="comment-main-box">
+                <div className="comments-box">
+                  <div className="profile-pic">
+                    <img className="review-avatar"
+                      src={user.image}
+                      alt={user.name}
                     />
                   </div>
-                  <div class="comment-text-box">
-                    <div class="arrow">
+                  <div className="comment-text-box">
+                    <div className="arrow">
 
                     </div>
-                    <div class="comment-text">
+                    <div className="comment-text">
                       <h5 className="rev-username">{user.name}</h5>
 
                     <p className="content-rev">
