@@ -6,7 +6,7 @@ const FavouritesSearches = ({ saveSearch }) => {
   const [clicked, setClicked] = useState(false)
   const doSaveSearch = () => {
     if (saveSearch) {
-      const fav = JSON.parse(localStorage.getItem("miPelicula")) || [];
+      const fav = JSON.parse(localStorage.getItem("mySearch")) || [];
       const miArray = [...fav, saveSearch.id]
       localStorage.setItem('mySearch', JSON.stringify(miArray))
     }

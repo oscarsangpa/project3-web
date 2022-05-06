@@ -4,19 +4,22 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useForm } from "react-hook-form";
 import InputGroup from "../InputGroup/InputGroup";
 import { createReview, deleteReview } from "../../services/ReviewServices";
-import { getUser } from "../../services/UsersService";
+import { getCurrentUser, getUser } from "../../services/UsersService";
 import "./Review.scss";
 
-const Review = ({ itemId }) => {
+const Review = ({ itemId, reviews, setRefresh, refresh }) => {
   const [sendReview, setSendReview] = useState(false);
   const [errors, setErrors] = useState(false);
   const { user } = useAuthContext();
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // console.log(user)
 
   const { handleSubmit, register } = useForm();
 
+  
+console.log(user)
   const onSubmit = (data) => {
     const { description } = data;
     // console.log("mi review", data, user)
@@ -27,7 +30,7 @@ const Review = ({ itemId }) => {
     } else {
       createReview({ ...data, user, itemId })
         .then((review) => {
-          getUser();
+          setRefresh(!refresh)
           // navigate("/profile");
         })
         .catch((err) => {
@@ -40,14 +43,18 @@ const Review = ({ itemId }) => {
   };
 
   const handleDelete = (id) => {
-    console.log("el id", id, user);
-    deleteReview(id).then(() => {
-      getUser();
-    });
+    deleteReview(id)
+      .then(res => {
+        console.log(res)
+        setRefresh(!refresh);
+         
+      })    
   };
+  console.log(reviews)
+
   return (
     <>
-        {/* {user.reviews.map((rew) => {
+        { reviews.map((rew) => {
             return (
               <div className="comment-main-box">
                 <div className="comments-box">
@@ -70,13 +77,38 @@ const Review = ({ itemId }) => {
                     </div>
                   </div>
                 </div>
+                    <button onClick={() => handleDelete(rew._id)}>delee</button>
               </div>
             );
-          })} */}
+          })}
           
+          <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <InputGroup
+                label="Review"
+                id="description"
+                register={register}
+                type="text"
+              />
+              <button className={`btn btn-${sendReview? 'secondary' : 'primary'}`}>{sendReview ? 'Creating user...' : 'Submit'}</button>
+              
+              <p>
+              {
+              reviews.map(des => {
+                return (
+                  <>
+                    <p>{des.description}</p>
+                  </>
+                )
+              })}</p>
+            </form>
+          </div>
 
           {/* {
             !user &&
+
+
+
 
 
           (

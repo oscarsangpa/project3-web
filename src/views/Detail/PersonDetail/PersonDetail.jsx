@@ -8,10 +8,13 @@ import Review from "../../../components/Review/Review";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useTheme } from "../../../contexts/ThemeContext";
 import "../../../components/PopularSearched/PopularSearched.scss";
+import { getAllReviews } from "../../../services/ReviewServices";
 
 export default function PersonDetail({popular}) {
   const [detailPerson, setDetailPerson] = useState([]);
   const [creditPerson, setCreditPerson] = useState();
+  const [reviews, setReviews] = useState([]);
+  const [refresh, setRefresh] = useState(false) 
   const { personId } = useParams();
   const {user} = useAuthContext()
   const { theme} = useTheme()
@@ -27,8 +30,16 @@ export default function PersonDetail({popular}) {
           setCreditPerson(credit);
         })
         .catch((error) => console.log(error));
+
+        getAllReviews(personId)
+        .then((reviews) => {
+          console.log(reviews)
+    
+          setReviews(reviews);
+        })
+        .catch((error) => console.log(error));
     }
-  }, [personId]);
+  }, [personId, refresh]);
 
   return (
     <div className={theme}>
@@ -37,7 +48,7 @@ export default function PersonDetail({popular}) {
 
       <KnownFor creditCast={creditPerson} />
 
-      <Review itemId={detailPerson.id}/>
+      <Review setRefresh={setRefresh} refresh={refresh} itemId={detailPerson.id} reviews={reviews}/>
       <Filmography credits={creditPerson} />
       </div>
     </div>

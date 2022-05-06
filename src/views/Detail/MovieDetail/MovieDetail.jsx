@@ -7,11 +7,13 @@ import Review from "../../../components/Review/Review";
 import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useTheme } from "../../../contexts/ThemeContext";
+import { getAllReviews } from "../../../services/ReviewServices";
 
 export default function MovieDetail() {
   const { theme} = useTheme()
   const [detailMovie, setDetailMovie] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
   const {user} = useAuthContext()
 
@@ -20,6 +22,12 @@ export default function MovieDetail() {
       httpGet(`/movie/${movieId}`)
         .then((movie) => {
           setDetailMovie(movie);
+        })
+        .catch((error) => console.log(error));
+        getAllReviews(movieId)
+        .then((reviews) => {
+    
+          setReviews(reviews);
         })
         .catch((error) => console.log(error));
       httpGet(`/movie/${movieId}/credits`)
@@ -37,7 +45,7 @@ export default function MovieDetail() {
       {/* <FavouritesSearches saveSearch={detailMovie}/> */}
       <Cast cast={creditChar} />
 
-      <Review itemId={detailMovie.id}/>
+      <Review itemId={detailMovie.id} reviews={reviews}/>
     </div>
       
     </div>

@@ -6,6 +6,7 @@ import Information from "../../../components/Information/Information";
 import Review from "../../../components/Review/Review";
 import FavouritesSearches from "../../../components/FavouritesSearchs/FavouritesSearches";
 import { useTheme } from "../../../contexts/ThemeContext";
+import { getAllReviews } from "../../../services/ReviewServices";
 
 export default function SerieDetail() {
   const { theme } = useTheme()
@@ -13,6 +14,7 @@ export default function SerieDetail() {
   const [background, setBackground] = useState([]);
   const [creditChar, setCreditChar] = useState([]);
   const { tvId } = useParams();
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     if (tvId) {
@@ -27,6 +29,12 @@ export default function SerieDetail() {
           setCreditChar(credit);
         })
         .catch((error) => console.log(error));
+      getAllReviews(tvId)
+        .then((reviews) => {
+    
+          setReviews(reviews);
+        })
+        .catch((error) => console.log(error));
     }
   }, [tvId]);
 
@@ -36,7 +44,7 @@ export default function SerieDetail() {
       {/* <FavouritesSearches saveSearch={detailTv}/> */}
       <Information info={detailTv} background={background} />
       <Cast cast={creditChar} />
-      <Review itemId={detailTv.id}/>
+      <Review itemId={detailTv.id} reviews={reviews}/>
     </div>
     </div>
   );
