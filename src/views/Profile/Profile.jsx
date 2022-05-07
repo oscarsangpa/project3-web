@@ -38,44 +38,20 @@ const Profile = ({}) => {
         console.log(error);
      }
 
-   //   const filterMovie = mySearch.filter(
-   //    (search) => search.media_type === "movie");
-   //   const filterTv = mySearch.filter((search) => search.media_type === "tv");
-   //   const filterPerson = mySearch.filter(
-   //    (search) => search.media_type === "person"
-   //  );
-   //  console.log(filterPerson)
-   //  console.log(filterTv )
-   //  console.log(filterMovie)) }
-      
 
-      // if (filterPerson) {
-      //     httpGet(`/person/${filterPerson}`)
-      //       .then((person) => setFavPerson(person))
-      //       .catch((error) => console.log(error));
-      // }
-
-      // if (filterTv ) {
-      //         httpGet(`/tv/${filterTv }`)
-      //           .then((tv) => {
-      //             setFavTv(tv);
-                  
-      //           })
-      //           .catch((error) => console.log(error));
-      // }
   }, [])
   // console.log(user)
   return ( 
       <div className={theme}>
-      <div className="background">
-      <h4 className="text">Profile</h4>
-      <img className="user-avatar" src={user?.image} alt={user?.name} />
-      <p> Hello {user?.name}!</p>
+         <div className="background">
+            <h4 className="text">Profile</h4>
+            <img className="user-avatar" src={user?.image} alt={user?.name} />
+            <p> Hello {user?.name}!</p>
 
-      <PopularSearched popular={mySearch.movies} />
-      <PopularSearched popular={mySearch.series} />
-      <PopularSearched popular={mySearch.persons} />
-      </div>
+            <PopularSearched popular={mySearch.movies} />
+            <PopularSearched popular={mySearch.series} />
+            <PopularSearched popular={mySearch.persons} />
+         </div>
       </div>
    );
 }
