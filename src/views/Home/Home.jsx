@@ -43,22 +43,6 @@ const Home = () => {
         .catch((err) => console.log(err));
   };
 
-  /* intentado hacer las 3 peticiones en una usando Promisse.all. No funciona */
-
-  //   if(getPerson && getMovies && getTvShows) {
-  //     Promise.all([getPerson, getMovies, getTvShows
-  //     ]).then((person, movie, tvShow) => {
-  //       setPeople(person)
-  //       console.log("person", people)
-  //       setMovies(movie)
-  //       console.log("movies", movies)
-  //       setTvShows(tvShow)
-  //       console.log("tvs", tvShows)
-  //     })
-  //       .catch(error => console.log(error))
-  //   }
-  // }
-
   useEffect(() => {
     getPerson();
     getMovies();

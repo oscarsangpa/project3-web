@@ -11,6 +11,7 @@ function Search() {
   const [searched, setSearched] = useState([]);
   const [searchParams] = useSearchParams({});
   const [listToShow, setListToShow] = useState("all");
+  
   const filterMovie = searched.filter(
     (search) => search.media_type === "movie"
     );

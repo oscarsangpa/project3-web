@@ -82,7 +82,7 @@ console.log(user)
             );
           })}
           
-          <div>
+          <div className="rev-container">
             <form onSubmit={handleSubmit(onSubmit)}>
               <InputGroup
                 label="Review"
@@ -90,7 +90,7 @@ console.log(user)
                 register={register}
                 type="text"
               />
-              <button className={`btn btn-${sendReview? 'secondary' : 'primary'}`}>{sendReview ? 'Creating user...' : 'Submit'}</button>
+              <button className={`btn btn-${sendReview? 'secondary' : 'primary'}`}>{sendReview ? 'Creating review' : 'Send'}</button>
               
               <p>
               {
@@ -106,10 +106,6 @@ console.log(user)
 
           {/* {
             !user &&
-
-
-
-
 
           (
             <div>
