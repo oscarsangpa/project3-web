@@ -17,6 +17,7 @@ const Information = (props) => {
     production_companies,
     genres,
   } = props.info;
+  console.log("information")
   return (
     <>
       <div className={theme}>
