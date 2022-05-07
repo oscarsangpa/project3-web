@@ -8,7 +8,7 @@ import { getAccessToken, logout } from '../store/AccessTokenStore';
 
 const create = ({ useAccessToken } = { useAccessToken: true }) => {
   const http = axios.create({
-    baseURL: 'http://localhost:3001/api',
+    baseURL: 'https://knowfor.onrender.com',
     withCredentials: false
   })
 
