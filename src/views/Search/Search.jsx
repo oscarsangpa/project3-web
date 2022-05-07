@@ -24,7 +24,7 @@ function Search() {
     console.log()
     const q = searchParams.get('q');
     if(q) {
-      httpGet("/search/multi/?query=" + q)
+      httpGet("/search/multi?query=" + q)
       .then((data) => {
           setSearched(data.results);
         })
