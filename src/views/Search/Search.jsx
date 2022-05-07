@@ -21,7 +21,6 @@ function Search() {
   );
 
   useEffect(()=> {
-    console.log()
     const q = searchParams.get('q');
     if(q) {
       httpGet("/search/multi?query=" + q)

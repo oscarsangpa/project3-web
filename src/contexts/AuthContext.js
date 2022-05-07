@@ -47,7 +47,7 @@ export const AuthContextProvider = ({ children }) => {
     if (!fetchedRef.current) {
       // token?
       if (getAccessToken()) {
-        console.log(getAccessToken())
+        // console.log(getAccessToken())
         if (isValidJwt(getAccessToken())) {
           getUser()
         } else {

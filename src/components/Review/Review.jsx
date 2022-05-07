@@ -19,19 +19,16 @@ const Review = ({ itemId, reviews, setRefresh, refresh }) => {
   const { handleSubmit, register } = useForm();
 
   
-console.log(user)
   const onSubmit = (data) => {
     const { description } = data;
     // console.log("mi review", data, user)
 
     if (!description) {
       setErrors(true);
-      console.log("ree", data, user)
     } else {
       createReview({ ...data, user, itemId })
         .then((review) => {
           setRefresh(!refresh)
-          // navigate("/profile");
         })
         .catch((err) => {
           console.log(err);
@@ -45,12 +42,10 @@ console.log(user)
   const handleDelete = (id) => {
     deleteReview(id)
       .then(res => {
-        console.log(res)
         setRefresh(!refresh);
          
       })    
   };
-  console.log(reviews)
 
   return (
     <>
@@ -89,7 +84,7 @@ console.log(user)
                     </div>
                   </div>
                 </div>
-                    <button onClick={() => handleDelete(rew._id)}>delee</button>
+                    <button onClick={() => handleDelete(rew._id)}>delete</button>
               </div>
             );
           })}

@@ -22,8 +22,7 @@ const Profile = ({}) => {
      let search;
      try {
         search = JSON.parse(window.localStorage.getItem('mySearch'));
-        console.log(search);
-        search.forEach(item => {
+        search?.forEach(item => {
            if(item.birthday) {
               setMySearch((prevState) => ({...prevState, persons: [...prevState.persons, item]}))
            }

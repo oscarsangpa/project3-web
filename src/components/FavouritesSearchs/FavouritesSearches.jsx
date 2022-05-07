@@ -19,7 +19,6 @@ const FavouritesSearches = ({ saveSearch }) => {
   const deleteFav = (id) => {
     const miArray = fav;
     localStorage.removeItem("mySearch", miArray)
-    console.log("fav", fav)
     setClicked(false)
     // if(miArray.includes(id)){
 
@@ -35,13 +34,13 @@ const FavouritesSearches = ({ saveSearch }) => {
         ?
          (
       <button className="btn-fav" onClick={doSaveSearch}>
-      <i class="fa-regular fa-star fa-xl"></i>
+      <i className="fa-regular fa-star fa-xl"></i>
       </button>
 
          ) :
          (
       <button className="btn-fav" onClick={deleteFav}>
-      <i class="fa-solid fa-star fa-xl cliked"></i>
+      <i className="fa-solid fa-star fa-xl cliked"></i>
       </button>
          )
       }

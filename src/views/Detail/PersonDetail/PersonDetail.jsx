@@ -33,7 +33,6 @@ export default function PersonDetail({popular}) {
 
         getAllReviews(personId)
         .then((reviews) => {
-          console.log(reviews)
     
           setReviews(reviews);
         })
