@@ -4,6 +4,9 @@ import "./Favorites.scss"
 const FavouritesSearches = ({ saveSearch }) => {
   const [fav, setFav] = useState(localStorage.getItem("mySearch") || []);
   const [clicked, setClicked] = useState(false)
+
+
+
   const doSaveSearch = () => {
     if (saveSearch) {
       const fav = JSON.parse(localStorage.getItem("mySearch")) || [];
@@ -18,6 +21,9 @@ const FavouritesSearches = ({ saveSearch }) => {
     localStorage.removeItem("mySearch", miArray)
     console.log("fav", fav)
     setClicked(false)
+    // if(miArray.includes(id)){
+
+    // }
 
   } 
 

@@ -54,14 +54,26 @@ console.log(user)
 
   return (
     <>
+              {
+              !user ?
+
+            (
+              <div>
+                <p>Sign in {<Link to={"/register"}> here </Link>} to comment</p>
+              </div>)
+              :
+              (
+                <div>
+
+
         { reviews.map((rew) => {
             return (
               <div className="comment-main-box">
                 <div className="comments-box">
                   <div className="profile-pic">
                     <img className="review-avatar"
-                      src={user.image}
-                      alt={user.name}
+                      src={user?.image}
+                      alt={user?.name}
                     />
                   </div>
                   <div className="comment-text-box">
@@ -69,7 +81,7 @@ console.log(user)
 
                     </div>
                     <div className="comment-text">
-                      <h5 className="rev-username">{user.name}</h5>
+                      <h5 className="rev-username">{user?.name}</h5>
 
                     <p className="content-rev">
                     {rew.description}
@@ -90,33 +102,15 @@ console.log(user)
                 register={register}
                 type="text"
               />
-              <button className={`btn btn-${sendReview? 'secondary' : 'primary'}`}>{sendReview ? 'Creating review' : 'Send'}</button>
-              
-              <p>
-              {
-              reviews.map(des => {
-                return (
-                  <>
-                    <p>{des.description}</p>
-                  </>
-                )
-              })}</p>
+              <button className={`btn btn-${sendReview? 'secondary' : 'primary'}`}>{sendReview ? 'Creating review' : 'Send'}</button> 
+         
             </form>
           </div>
+          </div>
+              )
+              }
 
-          {/* {
-            !user &&
-
-          (
-            <div>
-            <p>Sign in {<Link to={"/register"}> here </Link>} to comment</p>
-  <button
-  className={`btn btn-${sendReview ? "secondary" : "primary"}`}
-  >
-    {sendReview ? "Creating review" : "Send review"}
-  </button>
-            </div>)
-          } */}
+          
             
     </>
   );

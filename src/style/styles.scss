@@ -10,6 +10,7 @@
 
 body {
   margin: 0;
+  height: 100%;
   // margin-top: -20px;
 }
 
@@ -61,6 +62,7 @@ padding-top: 80px;
 
   .background {
       background-color: $dark-color;
+      margin: -25px;
   }
 
   .nav-color {
