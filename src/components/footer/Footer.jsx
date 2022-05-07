@@ -2,7 +2,7 @@ import React from "react";
 import "../../style/styles.scss";
 import "./Footer.scss"
 
-const Footer = () => {
+const Footer =() => {
   return (
     <>
       <footer className="bg-footer">
