@@ -14,9 +14,8 @@ const Profile = ({}) => {
   })
   const { user } = useAuthContext();
   const { theme } = useTheme();
-  const [favMovie, setFavMovie] = useState([])
-  const [favPerson, setFavPerson] = useState([]);
-  const [favTv, setFavTv] = useState([]);
+ 
+  const notYet = <p> Not favourites now :( </p>
   
   useEffect(() => {
      let search;
@@ -41,15 +40,16 @@ const Profile = ({}) => {
   }, [])
   // console.log(user)
   return ( 
-      <div className={theme}>
+      <div className={`${theme} background`}>
          <div className="background">
-            <h4 className="text">Profile</h4>
             <img className="user-avatar" src={user?.image} alt={user?.name} />
-            <p> Hello {user?.name}!</p>
-
-            <PopularSearched popular={mySearch.movies} />
-            <PopularSearched popular={mySearch.series} />
+            <p className="text-profile"> Hello {user?.name}!</p>
+            <h2 className="text title"> My favourite people</h2>
             <PopularSearched popular={mySearch.persons} />
+            <h2 className="text title"> My favourites movies</h2>
+            <PopularSearched popular={mySearch.movies} />
+            <h2 className="text title"> My favourite TV shows</h2>
+            <PopularSearched popular={mySearch.series} />
          </div>
       </div>
    );

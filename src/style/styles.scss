@@ -8,6 +8,10 @@
 
 }
 
+// main {
+//   background-color: $dark-color;
+// }
+
 body {
   margin: 0;
 
@@ -44,14 +48,23 @@ padding-top: 80px;
 
   .scroll-bar {
     ::-webkit-scrollbar-track {
-      background: $primary-white-color;
+      background: $primary-dark-color;
     }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: $primary-light-color;
   }
 
   h1,h2,h3,h4,h5,h6, li {
     color: $dark-color;
   }
 
+  main {
+    background-color: $primary-light-color;
+  }
+
+}
 }
 
 .dark {
@@ -72,18 +85,24 @@ padding-top: 80px;
     ::-webkit-scrollbar-track {
       background: $primary-dark-color;
     }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: $primary-dark-color;
   }
+
+}
+  
 
   h1,h2,h3,h4,h5,h6, p, li {
     color: $light-text;
   }
 
-  body {
+  main {
     background-color: $dark-color;
   }
+
 }
-
-
 
  
 

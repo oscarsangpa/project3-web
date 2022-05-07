@@ -7,7 +7,7 @@ const FooterComponent =() => {
     <>
       <footer className="bg-footer">
         <p>
-          {`App created by `}
+          {`Created by `}
           <a className="link-tmdb"
             href="https://github.com/AlejandroGC1990"
             target="_blank"

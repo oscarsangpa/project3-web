@@ -2,6 +2,14 @@
 .user-avatar {
   width: 25%;
   border-radius: 50px;
+  display: flex;
+  align-content: center;
+  margin-top: 10px;
+  margin: auto;
+}
+
+.text-profile {
+  text-align: center;
 }
 
 body{

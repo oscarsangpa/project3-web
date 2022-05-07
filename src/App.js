@@ -16,7 +16,7 @@ export function App() {
       <BrowserRouter>
         <ThemeContextProvider>
           <AuthContextProvider>
-            <main>
+            <main className="background">
               <Navbar />
               <MainRouter />
               <FooterComponent/>
