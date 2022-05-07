@@ -5,7 +5,7 @@ import { ThemeContextProvider } from "./contexts/ThemeContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+import FooterComponent from "./components/Footer/Footer";
 // import "./style/styles.scss"
 
 const queryClient = new QueryClient();
@@ -19,7 +19,7 @@ export function App() {
             <main>
               <Navbar />
               <MainRouter />
-              <Footer/>
+              <FooterComponent/>
             </main>
           </AuthContextProvider>
         </ThemeContextProvider>

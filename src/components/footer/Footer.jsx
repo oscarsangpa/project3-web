@@ -2,7 +2,7 @@ import React from "react";
 import "../../style/styles.scss";
 import "./Footer.scss"
 
-const Footer =() => {
+const FooterComponent =() => {
   return (
     <>
       <footer className="bg-footer">
@@ -46,4 +46,4 @@ const Footer =() => {
   );
 };
 
-export default Footer;
+export default FooterComponent;
