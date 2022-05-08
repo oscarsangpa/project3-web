@@ -1,3 +1,4 @@
+@import "../../style/variables.scss";
 
 .comments-box {
   display: flex;
@@ -57,6 +58,14 @@
   border: 1px solid white;
 }
 
-rev-container {
+.rev-container {
   align-content: center;
+}
+
+.btn-rev {
+  background-color: $secundary-color;
+  border-radius: 4px;
+  color: $primary-light-color;
+  border: none;
+  padding: 8px 12px;
 }

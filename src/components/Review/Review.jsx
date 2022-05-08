@@ -92,12 +92,12 @@ const Review = ({ itemId, reviews, setRefresh, refresh }) => {
           <div className="rev-container">
             <form onSubmit={handleSubmit(onSubmit)}>
               <InputGroup
-                label="Review"
+                placeholder="Review"
                 id="description"
                 register={register}
                 type="text"
               />
-              <button className={`btn btn-${sendReview? 'secondary' : 'primary'}`}>{sendReview ? 'Creating review' : 'Send'}</button> 
+              <button className="btn-rev">{sendReview ? 'Creating review' : 'Send'}</button> 
          
             </form>
           </div>

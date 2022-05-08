@@ -39,14 +39,14 @@ export default function MovieDetail() {
   }, [movieId]);
 
   return (
-    <div className={`${theme} background`}>
-    {/* <div className="background"> */}
+    <div className={theme}>
+    <div className="background">
       <Information info={detailMovie} />
       <FavouritesSearches saveSearch={detailMovie}/>
       <Cast cast={creditChar} />
 
       <Review itemId={detailMovie.id} reviews={reviews}/>
-    {/* </div> */}
+    </div>
       
     </div>
   );
