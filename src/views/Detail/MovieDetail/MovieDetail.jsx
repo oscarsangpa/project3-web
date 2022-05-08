@@ -43,7 +43,7 @@ export default function MovieDetail() {
      
     <div className="background">
       <Information info={detailMovie} />
-      <FavouritesSearches saveSearch={detailMovie}/>
+      {/* <FavouritesSearches saveSearch={detailMovie}/> */}
       <Cast cast={creditChar} />
 
       <Review itemId={detailMovie.id} reviews={reviews}/>
