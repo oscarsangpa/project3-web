@@ -29,7 +29,7 @@ const FooterComponent =() => {
           </a>
         </p>
         <p>
-          {`Gracias a `}
+          {`Thanks to `}
           <a className="link-tmdb"
             href="https://www.themoviedb.org"
             target="_blank"
@@ -39,7 +39,7 @@ const FooterComponent =() => {
             The Movie Database
             </strong>
           </a>
-          {` por ofrecernos los datos`}
+          {` for providing the data`}
         </p>
       </footer>
     </>

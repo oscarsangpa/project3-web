@@ -21,6 +21,7 @@ const Information = (props) => {
   return (
     <>
       <div className={theme}>
+      <br></br>
         <h2 className="title" key={id}>{original_title || original_name} </h2>
         <img className="img-profile"
           src={!poster_path ? `${imgNotFound}` : `${BASE_IMG}${poster_path}`}

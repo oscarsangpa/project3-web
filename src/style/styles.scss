@@ -60,6 +60,8 @@ padding-top: 80px;
     color: $dark-color;
   }
 
+  
+
   main {
     background-color: $primary-light-color;
   }
@@ -74,7 +76,7 @@ padding-top: 80px;
 
   .background {
       background-color: $dark-color;
-      margin: 0px 0 0 0;
+      margin: -19px 0;
       
   }
 
@@ -96,6 +98,10 @@ padding-top: 80px;
 
   h1,h2,h3,h4,h5,h6, p, li {
     color: $light-text;
+  }
+
+  .textRev {
+    color: black;
   }
 
   main {

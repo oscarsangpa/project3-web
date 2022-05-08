@@ -33,6 +33,7 @@ const Filter = (props) => {
         );
       })
       }
+      <br></br>
       </div>
 
     </>

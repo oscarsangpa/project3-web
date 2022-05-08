@@ -78,7 +78,7 @@ const Review = ({ itemId, reviews, setRefresh, refresh }) => {
                     <div className="comment-text">
                       <h5 className="rev-username">{user?.name}</h5>
 
-                    <p className="content-rev">
+                    <p className="content-rev text textRev"> 
                     {rew.description}
                     </p>
                     </div>
@@ -101,6 +101,8 @@ const Review = ({ itemId, reviews, setRefresh, refresh }) => {
          
             </form>
           </div>
+          <br></br>
+          <br></br>
           </div>
               )
               }

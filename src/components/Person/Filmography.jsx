@@ -52,7 +52,9 @@ const Filmography = ({ credits }) => {
               </Link>
               {` as ${credit.character}`}
             </li>
+            <br></br>
           </ul>
+          
         );
       })}
     </>

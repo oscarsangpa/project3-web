@@ -35,10 +35,10 @@ function Search() {
       <div className={theme}>
 
       <div>
-
+      
       
       <div className="list background">
-
+      
         <p onClick={() => setListToShow("all")}>
           All ({searched.length}):
         </p>
@@ -71,7 +71,9 @@ function Search() {
         )}
         {listToShow === "all" && <Filter list={searched} />}
       </div>
-      </div>    
+        
+      </div>  
+      
       </div>
   );
 }

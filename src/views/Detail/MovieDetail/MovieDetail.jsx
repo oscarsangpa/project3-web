@@ -40,6 +40,7 @@ export default function MovieDetail() {
 
   return (
     <div className={theme}>
+     
     <div className="background">
       <Information info={detailMovie} />
       <FavouritesSearches saveSearch={detailMovie}/>
@@ -47,7 +48,7 @@ export default function MovieDetail() {
 
       <Review itemId={detailMovie.id} reviews={reviews}/>
     </div>
-      
+    
     </div>
   );
 }

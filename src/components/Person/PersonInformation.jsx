@@ -8,6 +8,7 @@ export default function PersonInformation({personInfo}) {
 
     return (
         <>
+          <br></br>
           <h2 className="knownfor-title">{personInfo.name}</h2>
           <div className="info-container">
 
